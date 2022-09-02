@@ -3,7 +3,6 @@ import { Item } from 'src/assets/menu';
 
 @Component({
   selector: 'app-menu-item',
-  //templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css'],
   template: `
   <div>
@@ -27,5 +26,3 @@ export class MenuItemComponent {
   }
 
 } */
-/* export class 
-@Input() hero!: Hero; */
