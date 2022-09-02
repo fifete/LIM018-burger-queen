@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
       <app-input
       [label] = "label"
       [label2] = "label2"
+      [type] = "type"
+      [type2] = "type2"
       >{{label}}</app-input>
       <table>
           <tr>
@@ -37,6 +39,8 @@ import { Component, OnInit } from '@angular/core';
 export class OrderSummaryComponent implements OnInit {
   label = 'Cliente';
   label2 = 'N° de mesa';
+  type = 'text';
+  type2 = 'number';
   
   constructor() { }
 

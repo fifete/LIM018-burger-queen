@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ITEMS } from 'src/assets/menu';
 
 @Component({
   selector: 'app-category',
-  //templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
   template: `
   <section>
@@ -15,14 +14,6 @@ import { ITEMS } from 'src/assets/menu';
   </section>
   `
 })
-/* export class CategoryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-} */
 export class CategoryComponent {
   menu = ITEMS;
 }
