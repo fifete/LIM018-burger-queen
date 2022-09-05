@@ -4,16 +4,12 @@ import { ITEMS } from 'src/assets/menu';
 @Component({
   selector: 'app-category',
   styleUrls: ['./category.component.css'],
-  template: `
-  <section>
-    <app-menu-item
-    *ngFor="let item of menu"
-    [item] = "item"
-    >
-    </app-menu-item>
-  </section>
-  `
+  templateUrl : './category.component.html',
 })
 export class CategoryComponent {
   menu = ITEMS;
+
+  showBreakfast(menu: any[]):any {
+    return menu.filter(item => item.category === 'desayuno');
+  }
 }

@@ -1,0 +1,24 @@
+<main>
+    <app-navbar></app-navbar>
+    <h2>Menú</h2>
+    <p>Fecha del día</p>
+    <p>Hora del día</p>
+        <app-button-menu
+        #breakfast
+        text = "Desayuno"
+        (btnClick)="showBreakfast()"
+        ></app-button-menu>
+        <app-button-menu
+        text = "Almuerzo y cena"
+        (btnClick)="showLunch()"
+        ></app-button-menu>
+        <app-category></app-category>
+        <h2>Relizar pedido</h2>
+        <app-order-summary></app-order-summary>
+    <app-button
+      text = "Confirmar">
+    </app-button>
+    <app-button
+      text = "Cancelar"
+    ></app-button>
+</main>

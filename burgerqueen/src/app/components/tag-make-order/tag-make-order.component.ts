@@ -11,5 +11,12 @@ export class TagMakeOrderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  showBreakfast() {
+    console.log('mostrando menu')
+  }
+
+  showLunch() {
+    console.log('mostrando lunch')
+  }
 
 }

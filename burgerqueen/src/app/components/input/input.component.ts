@@ -3,13 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-input',
   styleUrls: ['./input.component.css'],
-  template: `
-    <label>{{labelName}}</label>
-    <input type={{type}} />
-
-    <label>{{labelClient}}</label>
-    <input type={{type2}} />
-  `
+  templateUrl: './input.component.html'
 })
 export class InputComponent implements OnInit {
   @Input('label') labelName = 'no hay, no existe';
