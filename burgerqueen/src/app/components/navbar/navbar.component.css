@@ -1,0 +1,40 @@
+.navigation {
+    font-family: 'rubik', serif;
+    font-weight: 400;
+    background-color: #FDC27A;
+    color: #104E5B;
+    height: 100%;
+    padding: 0 .5em;
+    text-align: center;
+
+}
+
+.nav-user-name, .nav-user-rol {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+a:hover,
+a:focus {
+    color: #3d65aa;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #104E5B;
+    font-size: 20px;
+    font-weight: 700;
+    padding: .25em 0;
+}
