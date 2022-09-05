@@ -4,20 +4,12 @@ import { Item } from 'src/assets/menu';
 @Component({
   selector: 'app-menu-item',
   styleUrls: ['./menu-item.component.css'],
-  template: `
-  <div>
-    <div>
-        <p>{{item.name}}</p>
-        <p>{{item.price}}</p>
-        <button #additem>Agregar item</button>
-    </div>
-  </div>
-  `
+  templateUrl: './menu-item.component.html'
 })
 export class MenuItemComponent {
   @Input() item!: Item;
   @ViewChild("additem") additem: ElementRef;
- 
+
   ngAfterViewInit() {
     console.log(this.additem);
   }
