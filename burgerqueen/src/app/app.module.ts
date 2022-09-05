@@ -12,6 +12,8 @@ import { OrderTableComponent } from './components/order-table/order-table.compon
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { InputComponent } from './components/input/input.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ButtonMenuComponent } from './components/button-menu/button-menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CategoryComponent } from './components/category/category.component';
     OrderTableComponent,
     OrderSummaryComponent,
     InputComponent,
-    CategoryComponent
+    CategoryComponent,
+    ButtonComponent,
+    ButtonMenuComponent
   ],
   imports: [
     BrowserModule,
