@@ -14,13 +14,18 @@ export class  AuthtenticationService {
   constructor(
     public auth: AngularFireAuth,
     public router: Router
-    ) {  }
+    ) {
+      this.auth.authState.subscribe((user)=> {
+        console.log(user)
+        if (user) {
+          this.router.navigate(['order']);
+        }
+      })
+    }
 
   SignIn(email: string, password:string) {
-   return this.auth
-    .signInWithEmailAndPassword(email, password)
-    .then((resp) => {
-      
+   return this.auth.signInWithEmailAndPassword(email, password)
+    /* .then((resp) => {
         this.auth.authState.subscribe((user) => {
           if (user) {
             this.router.navigate(['order']);
@@ -30,6 +35,6 @@ export class  AuthtenticationService {
     })
     .catch(err => {
       console.log(err.message)
-    })
+    }) */
   }
 }
