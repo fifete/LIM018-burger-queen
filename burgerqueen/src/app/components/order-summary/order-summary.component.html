@@ -1,4 +1,4 @@
-<div>
+<div class="order-summary" >
   <app-input
   [label] = "label"
   [label2] = "label2"
@@ -6,24 +6,43 @@
   [type2] = "type2"
   >{{label}}</app-input>
   <table>
+    <thead class="table-head" >
       <tr>
         <th>Producto</th>
         <th>Unidades</th>
-        <th>s./</th>
+        <th>Precio</th>
       </tr>
+    </thead>
+    <tbody class="table-body" >
       <tr>
-          <td>cafe</td>
+          <td>Café americano</td>
           <td>
+            <div class="table-counter" >
               <span>+</span>
               <p>1</p>
               <span>-</span>
+            </div>
           </td>
           <td>5.90</td>
       </tr>
       <tr>
-          <td>Total</td>
-          <td></td>
-          <td>$5.90</td>
-      </tr>
+        <td>Café americano</td>
+        <td>
+          <div class="table-counter" >
+            <span>+</span>
+            <p>1</p>
+            <span>-</span>
+          </div>
+        </td>
+        <td>5.90</td>
+    </tr>
+    </tbody>
+    <tfoot class="table-total" >
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td>$5.90</td>
+    </tr>
+    </tfoot>
   </table>
 </div>
