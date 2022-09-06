@@ -1,0 +1,31 @@
+.make-order {
+    height: 100vh;
+    background-color: #F2F6F7;
+    width: 100vw;
+}
+
+/* .flex {
+    display: flex;
+}
+ */
+h1, p {
+  font-family: 'Rubik';
+  color: #104E5B;
+}
+h1 {
+  text-align: center;
+}
+.information-day {
+  margin-left: 66px;
+}
+
+.options-button {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* app-navbar {
+    max-width: 150px;
+    width: 50%;
+} */

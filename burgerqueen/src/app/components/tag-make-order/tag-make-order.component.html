@@ -1,24 +1,27 @@
-<main>
-    <app-navbar></app-navbar>
-    <h2>Menú</h2>
+<app-navbar></app-navbar>
+<main class="make-order flex">
+  <h1>Menú</h1>
+  <div class="information-day" >
     <p>Fecha del día</p>
     <p>Hora del día</p>
-        <app-button-menu
-        #breakfast
-        text = "Desayuno"
-        (btnClick)="showBreakfast()"
-        ></app-button-menu>
-        <app-button-menu
-        text = "Almuerzo y cena"
-        (btnClick)="showLunch()"
-        ></app-button-menu>
-        <app-category></app-category>
-        <h2>Relizar pedido</h2>
-        <app-order-summary></app-order-summary>
-    <app-button
-      text = "Confirmar">
-    </app-button>
-    <app-button
-      text = "Cancelar"
-    ></app-button>
+  </div>
+  <div class="options-button" >
+    <app-button-menu
+    text = "Desayuno"
+    (btnClick)="showBreakfast()"
+    ></app-button-menu>
+    <app-button-menu
+    text = "Almuerzo y cena"
+    (btnClick)="showLunch()"
+    ></app-button-menu>
+  </div>
+  <app-category></app-category>
+  <h2>Relizar pedido</h2>
+  <app-order-summary></app-order-summary>
+  <app-button
+    text = "Confirmar">
+  </app-button>
+  <app-button
+    text = "Cancelar"
+  ></app-button>
 </main>

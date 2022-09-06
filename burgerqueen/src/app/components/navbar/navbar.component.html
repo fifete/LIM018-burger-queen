@@ -1,9 +1,16 @@
-<nav>
-    <img/>
-    <p>username</p>
-    <p>role</p>
-    <a routerLink="/order">Realizar pedidos</a>
-    <a routerLink="/deliver">Pedidos por entregar</a>
-    <img/>
-    <p>Logout</p>
+<nav class="navigation flex">
+    <img alt="nav-burguer" />
+    <div class="nav-main">
+        <div class="nav-user-rol">
+            <p class="nav-user-name" >username</p>
+            <p class="nav-user-rol">role</p>
+        </div>
+        <ul class="flex">
+            <li><a routerLink="/order">RP</a></li>
+            <li><a routerLink="/deliver">PE</a></li>
+            <!-- <li><a routerLink="/order">RP</a> Realizar pedidos</li>
+            <li><a routerLink="/deliver">PE</a> Pedidos por entregar</li> -->
+        </ul>
+    </div>
+    <img alt="logout" />
 </nav>
