@@ -1,7 +1,7 @@
 .make-order {
-    height: 100vh;
-    background-color: #F2F6F7;
-    width: 100vw;
+  background-color: #F2F6F7;
+  padding: 1.5em;
+  width: 85%;
 }
 
 /* .flex {
@@ -15,14 +15,23 @@ h1, p {
 h1 {
   text-align: center;
 }
-.information-day {
-  margin-left: 66px;
+
+.make-order-date > * + * {
+  margin-bottom: 1em;
 }
+
+.information-day p{
+  font-size: 14px;
+ } 
 
 .options-button {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+app-button-menu {
+  width: 45%;
 }
 
 /* app-navbar {

@@ -4,7 +4,7 @@
     background-color: #FDC27A;
     color: #104E5B;
     height: 100%;
-    padding: 0 .5em;
+    padding: 1em .5em;
     text-align: center;
 
 }
@@ -12,6 +12,14 @@
 .nav-user-name, .nav-user-rol {
     font-size: 15px;
     font-weight: 600;
+}
+
+.nav-user-rol {
+    margin: 2.5em 0;
+}
+
+.nav-logout {
+    margin-top: auto;
 }
 
 a:hover,
