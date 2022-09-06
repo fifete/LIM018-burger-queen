@@ -1,0 +1,32 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 28px;
+}
+
+label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+
+  color: #104E5B;
+}
+
+input {
+  width: 181px;
+  height: 33px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 6px 20px;
+}
+
+input::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  color: #737F8B;
+}

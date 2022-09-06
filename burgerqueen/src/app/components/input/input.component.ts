@@ -7,9 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   @Input('label') labelName = 'no hay, no existe';
-  @Input('label2') labelClient = 'no hay, no existe';
   @Input('type') type = 'text';
-  @Input('type2') type2 = 'text';
+  @Input('placeholder') placeholder = '***'
 
   constructor() { }
 

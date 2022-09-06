@@ -1,31 +1,26 @@
-<div class="order-summary" >
-  <app-input
-  [label] = "label"
-  [label2] = "label2"
-  [type] = "type"
-  [type2] = "type2"
-  >{{label}}</app-input>
-  <table>
-    <thead class="table-head" >
-      <tr>
-        <th>Producto</th>
-        <th>Unidades</th>
-        <th>Precio</th>
-      </tr>
-    </thead>
-    <tbody class="table-body" >
-      <tr>
-          <td>Café americano</td>
-          <td>
-            <div class="table-counter" >
-              <span>+</span>
-              <p>1</p>
-              <span>-</span>
-            </div>
-          </td>
-          <td>5.90</td>
-      </tr>
-      <tr>
+<div class="order-summary">
+  <div class="order-summary-inputs"  >
+    <app-input
+    label = "Cliente"
+    type = "text"
+    placeholder= "Susana"
+    ></app-input>
+    <app-input
+    label = "N° de mesa"
+    type = "text"
+    placeholder= "N° 1"
+    ></app-input>
+  </div>
+<table>
+  <thead class="table-head" >
+    <tr>
+      <th>Producto</th>
+      <th>Unidades</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody class="table-body" >
+    <tr>
         <td>Café americano</td>
         <td>
           <div class="table-counter" >
@@ -36,13 +31,24 @@
         </td>
         <td>5.90</td>
     </tr>
-    </tbody>
-    <tfoot class="table-total" >
-      <tr>
-        <td>Total</td>
-        <td></td>
-        <td>$5.90</td>
-    </tr>
-    </tfoot>
-  </table>
+    <tr>
+      <td>Café americano</td>
+      <td>
+        <div class="table-counter" >
+          <span>+</span>
+          <p>1</p>
+          <span>-</span>
+        </div>
+      </td>
+      <td>5.90</td>
+  </tr>
+  </tbody>
+  <tfoot class="table-total" >
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td>$5.90</td>
+  </tr>
+  </tfoot>
+</table>
 </div>
