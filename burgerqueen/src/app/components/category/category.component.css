@@ -1,0 +1,11 @@
+.menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10%;
+    gap: 1.5em 10%;
+}
+
+app-menu-item {
+    color: #104E5B;
+    line-height: 1;
+}
