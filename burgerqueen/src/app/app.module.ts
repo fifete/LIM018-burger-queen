@@ -15,7 +15,32 @@ import { CategoryComponent } from './components/category/category.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonMenuComponent } from './components/button-menu/button-menu.component';
 
+// 1. Import the libs you need
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+import { AuthtenticationService } from './services/authtentication.service';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
+  authDomain: "burgerqueenproject.firebaseapp.com",
+  projectId: "burgerqueenproject",
+  storageBucket: "burgerqueenproject.appspot.com",
+  messagingSenderId: "273864718221",
+  appId: "1:273864718221:web:6a24d5cf43327eb8bf6fc4"
+};
+
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -30,11 +55,7 @@ import { ButtonMenuComponent } from './components/button-menu/button-menu.compon
     ButtonComponent,
     ButtonMenuComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
+  providers: [AuthtenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
