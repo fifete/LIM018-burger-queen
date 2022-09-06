@@ -1,28 +1,33 @@
 .make-order {
   background-color: #F2F6F7;
   padding: 1.5em;
-  width: 85%;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* .flex {
-    display: flex;
-}
- */
-h1, p {
+h1, h2, p {
   font-family: 'Rubik';
   color: #104E5B;
 }
+
 h1 {
   text-align: center;
+  font-weight: 700;
 }
 
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 44px 0 13px;
+}
 .make-order-date > * + * {
-  margin-bottom: 1em;
+  margin: 11px 0 27px;
 }
 
 .information-day p{
-  font-size: 14px;
- } 
+  font-weight: 400;
+  font-size: 18px;
+ }
 
 .options-button {
   display: flex;
@@ -34,7 +39,19 @@ app-button-menu {
   width: 45%;
 }
 
+.maker-oder-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 33px;
+  margin: 33px;
+}
+
 /* app-navbar {
     max-width: 150px;
     width: 50%;
 } */
+
+/* .flex {
+    display: flex;
+}
+ */

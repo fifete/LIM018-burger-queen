@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './order-summary.component.html'
 })
 export class OrderSummaryComponent implements OnInit {
-  label = 'Cliente';
-  label2 = 'N° de mesa';
-  type = 'text';
-  type2 = 'number';
-
   constructor() { }
 
   ngOnInit(): void {

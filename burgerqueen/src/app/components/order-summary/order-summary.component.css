@@ -6,6 +6,11 @@
   color: #104E5B;
 }
 
+.order-summary-inputs {
+  display: flex;
+  gap: 150px;
+}
+
 table {
   width: 510px;
   height: 100%;
