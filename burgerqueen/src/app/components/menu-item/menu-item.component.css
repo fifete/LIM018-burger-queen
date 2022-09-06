@@ -1,0 +1,30 @@
+.menu-item {
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    border-radius: .5em;
+    border: 1px solid black;
+    padding: .7em;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-info {
+    font-size: 14px;
+    word-wrap: break-word;
+    flex-basis: 60%;
+    flex-direction: column;
+    gap: .8em;
+}
+
+.add-menu-item {
+    background: #FFE7CA;
+    border: 0;
+    border-radius: .5em;
+    padding: .2em .4em;
+    color: inherit;
+}
+
+.flex {
+    display: flex;
+}
