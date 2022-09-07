@@ -9,32 +9,24 @@ import { Observable } from "rxjs";
 })
 
 export class  AuthtenticationService {
- /*  userData: any; */
 
   constructor(
     public auth: AngularFireAuth,
     public router: Router
     ) {
       this.auth.authState.subscribe((user)=> {
-        console.log(user)
         if (user) {
-          this.router.navigate(['order']);
-        }
-      })
-    }
+        this.router.navigate(['order']);
+      }
+    })
+  }
 
   SignIn(email: string, password:string) {
    return this.auth.signInWithEmailAndPassword(email, password)
-    /* .then((resp) => {
-        this.auth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['order']);
-          }
-        });
-      console.log('usuario logeado')
-    })
-    .catch(err => {
-      console.log(err.message)
-    }) */
+  }
+
+  async SignOut() {
+    await this.auth.signOut()
+    await this.router.navigate(['login']);
   }
 }
