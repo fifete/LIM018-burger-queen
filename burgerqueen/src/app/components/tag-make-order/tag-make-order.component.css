@@ -48,16 +48,13 @@ app-button-menu {
 }
 /* modif */
 app-navbar {
-  /* position: fixed; */
   transition: width 600ms ease;
-  overflow: scroll;
+  /* overflow: scroll; */
   position: fixed;
   width: 5rem;
   height: 100%;
-
   top: 0;
   width: 5rem;
-  /* height: 100vh; */
 }
 
 app-navbar:hover {

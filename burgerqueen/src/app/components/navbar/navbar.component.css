@@ -4,41 +4,8 @@
     background-color: #FDC27A;
     color: #104E5B;
     height: 100%;
-    /* padding: 1em .5em; */
     text-align: center;
-
-    /* position: fixed;
-    transition: width 600ms ease; */
-
 }
-
-/* .navigation:hover {
-  width: 160px;
-  overflow: visible;
-} */
-
-.nav-user-name, .nav-user-rol {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-/* .nav-user-rol {
-    margin: 2.5em 0;
-} */
-
-.nav-item:last-child {
-  margin-top: auto;
-}
-
-/* a:hover,
-a:focus {
-    color: #3d65aa;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-} */
 
 .nav-items {
   list-style: none;
@@ -49,8 +16,13 @@ a:focus {
   align-items: center;
   height: 100%;
 }
+
 .nav-item {
   width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
 }
 
 .nav-link {
@@ -61,22 +33,16 @@ a:focus {
 
 .link-text {
   display: none;
-  margin-left: 1rem;
+  margin-left: .5rem;
+  font-size: 15px;
+  font-weight: 500;
 }
-
-/* nav ul {
-    font-size: 14px;
-    list-style: none;
-    padding: 0;
-    justify-content: center;
-} */
 
 nav a {
     text-decoration: none;
     color: #104E5B;
     font-size: 16px;
     font-weight: 700;
-    /* padding: .25em 0; */
 }
  
 .nav-link fa-icon, .nav-link .nav-text-icon {
@@ -107,7 +73,6 @@ nav a {
   transition: 600ms;
 }
 
-
 .navigation:hover .logo fa-icon {
   transform: rotate(-180deg);
 }
@@ -116,12 +81,11 @@ nav a {
   display: inline;
 }
 
-.navigation:hover .logo fa-icon
-  {
-    margin-left: 11rem;
-  }
+.navigation:hover .logo fa-icon {
+  margin-left: 13rem;
+}
 
 .navigation:hover .logo-text
 {
-  left: 0px;
+  left: .5rem;
 }
