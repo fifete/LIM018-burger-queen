@@ -22,21 +22,8 @@ export class  AuthtenticationService {
       })
     }
   async SignIn(email: string, password:string) {
-    try{
-      await this.auth.signInWithEmailAndPassword(email, password)
-      console.log('logeado');
-      // return Promise.resolve("logeado");
-      return 'Exito'
-    } catch (err: any) {
-      if(err.message == 'Firebase: The password is invalid or the user does not have a password. (auth/wrong-password).')
-      return 'Ingrese una contraseña correcta'
-      // return Promise.resolve("Ingrese una contraseña correcta");
-
-    }
+    return await this.auth.signInWithEmailAndPassword(email, password)
   }
-/*    SignIn(email: string, password:string) {
-      return "logeado";
-   } */
 
   async SignOut() {
     await this.auth.signOut()
