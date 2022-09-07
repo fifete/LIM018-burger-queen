@@ -16,8 +16,10 @@ export class  AuthtenticationService {
     ) {
 
       this.auth.authState.subscribe((user) => {
-        if (user) {
+        if (user?.email === 'admin@gmail.com') {
             this.router.navigate(['order'])
+        } else {
+          this.router.navigate(['order'])
         }
       })
     }

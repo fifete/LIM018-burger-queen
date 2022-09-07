@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { TagMakeOrderComponent } from './components/tag-make-order/tag-make-order.component';
 import { TagOrderDeliveredComponent } from './components/tag-order-delivered/tag-order-delivered.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 const routes: Routes = [
   { path: "login" , component: LoginComponent},
   { path: "order" , component: TagMakeOrderComponent},
   { path: "deliver" , component: TagOrderDeliveredComponent},
+  { path: "register" , component: RegisterFormComponent},
   { path: "", redirectTo: "/login" , pathMatch: "full"}
 ];
 
