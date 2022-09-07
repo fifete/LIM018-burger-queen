@@ -6,7 +6,6 @@
     height: 100%;
     text-align: center;
 }
-
 .nav-items {
   list-style: none;
   padding: 0;
@@ -16,41 +15,34 @@
   align-items: center;
   height: 100%;
 }
-
 .nav-item {
   width: 100%;
 }
-
 .nav-item:last-child {
   margin-top: auto;
 }
-
 .nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
 }
-
 .link-text {
   display: none;
   margin-left: .5rem;
   font-size: 15px;
   font-weight: 500;
 }
-
 nav a {
     text-decoration: none;
     color: #104E5B;
     font-size: 16px;
     font-weight: 700;
 }
- 
 .nav-link fa-icon, .nav-link .nav-text-icon {
   width: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
 }
-
 .logo {
   font-weight: bold;
   text-transform: uppercase;
@@ -60,31 +52,25 @@ nav a {
   letter-spacing: 0.3ch;
   width: 100%;
 }
-
 .logo fa-icon {
   transform: rotate(0deg);
   transition: 600ms;
 }
-
 .logo-text {
   display: inline;
   position: absolute;
   left: -999px;
   transition: 600ms;
 }
-
 .navigation:hover .logo fa-icon {
   transform: rotate(-180deg);
 }
-
 .navigation:hover .link-text {
   display: inline;
 }
-
 .navigation:hover .logo fa-icon {
   margin-left: 13rem;
 }
-
 .navigation:hover .logo-text
 {
   left: .5rem;
