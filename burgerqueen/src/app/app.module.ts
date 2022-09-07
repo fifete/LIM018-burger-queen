@@ -22,6 +22,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AuthtenticationService } from './services/authtentication.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -39,7 +40,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule, FontAwesomeModule // storage
   ],
   declarations: [
     AppComponent,

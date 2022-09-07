@@ -1,5 +1,9 @@
 <nav class="navigation flex">
-    <img alt="nav-burguer" />
+  <input id="nav__toggle" type="checkbox"/>
+  <label class="nav__button" for="nav__toggle" >
+      <fa-icon [icon]="faBars"></fa-icon>
+  </label>
+
     <div class="nav-main">
         <div class="nav-user-rol">
             <p class="nav-user-name" >username</p>
@@ -8,10 +12,7 @@
         <ul class="flex">
             <li><a routerLink="/order">RP</a></li>
             <li><a routerLink="/deliver">PE</a></li>
-            <!-- <li><a routerLink="/order">RP</a> Realizar pedidos</li>
-            <li><a routerLink="/deliver">PE</a> Pedidos por entregar</li> -->
         </ul>
     </div>
-    <!-- <img alt="logout" class="nav-logout"/> -->
-   <p (click)="authService.SignOut()" >Logout</p>
+   <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span>
 </nav>
