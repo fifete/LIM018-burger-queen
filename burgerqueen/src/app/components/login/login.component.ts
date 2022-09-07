@@ -7,7 +7,7 @@ import { AuthtenticationService } from 'src/app/services/authtentication.service
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  text: Promise<string | undefined>;
   constructor(
     public authService : AuthtenticationService
   ) { }
@@ -15,4 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // signin(): void {
+  //   this.authService.SignIn(userName.value, userPassword.value)
+  // }
 }
