@@ -83,15 +83,12 @@ app-login {
 }
 
 app-tag-make-order{
-  display: inline-block;
+  display: flex;
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  }
+}
 
 app-root {
   height: 100%;
   width: 100%;
-  display: inline-block;
 }
