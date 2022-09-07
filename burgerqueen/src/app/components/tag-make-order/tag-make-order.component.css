@@ -1,8 +1,9 @@
 .make-order {
   background-color: #F2F6F7;
   padding: 1.5em;
-  width: 100vw;
-  height: 100%;
+/*   width: 100vw;
+  height: 100%; */
+  margin-left: 5rem;
 }
 
 h1, h2, p {
@@ -45,13 +46,20 @@ app-button-menu {
   gap: 33px;
   margin: 33px;
 }
+/* modif */
+app-navbar {
+  /* position: fixed; */
+  transition: width 600ms ease;
+  overflow: scroll;
+  position: fixed;
+  width: 5rem;
+  height: 100%;
 
-/* app-navbar {
-    max-width: 150px;
-    width: 50%;
-} */
-
-/* .flex {
-    display: flex;
+  top: 0;
+  width: 5rem;
+  /* height: 100vh; */
 }
- */
+
+app-navbar:hover {
+  width: 16rem;
+}
