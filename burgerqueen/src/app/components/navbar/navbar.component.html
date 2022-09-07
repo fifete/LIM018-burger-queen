@@ -1,47 +1,18 @@
-<nav class="navigation">
-    <ul class="nav-items">
-        <li class="logo">
-            <a href=""  class="nav-link">
-                <span class="link-text logo-text">BurguerQueen</span>
-                <fa-icon [icon]="faBars"></fa-icon>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href=""  class="nav-link">
-                <fa-icon [icon]="faBars"></fa-icon>
-                <span class="link-text">username - role</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="/order"  class="nav-link">
-                <span class="nav-text-icon">RP</span>
-                <span class="link-text">Realizar pedido</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="/deliver"  class="nav-link">
-                <span class="nav-text-icon">PE</span>
-                <span class="link-text">Pedido por entregar</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href=""  class="nav-link">
-                <fa-icon [icon]="logout" (click)="authService.SignOut()"></fa-icon>
-                <!-- <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span> -->
-                <span class="link-text">Cerrar sesion</span>
-            </a>
-        </li>
-    </ul>
-<!--     <div class="nav-user-rol">
-        <p class="nav-user-name" >username</p>
-        <p class="nav-user-rol">role</p>
-     </div> -->
-    <!-- <li>
-        <a routerLink="/order">
-            <span>RP</span>
-            <p>Realizar pedido</p>
-        </a>
-    </li>
-    <li><a routerLink="/deliver">PE</a></li> -->
-   <!-- <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span> -->
+<nav class="navigation flex">
+  <input id="nav__toggle" type="checkbox"/>
+  <label class="nav__button" for="nav__toggle" >
+      <fa-icon [icon]="faBars"></fa-icon>
+  </label>
+
+    <div class="nav-main">
+        <div class="nav-user-rol">
+            <p class="nav-user-name" >username</p>
+            <p class="nav-user-rol">role</p>
+        </div>
+        <ul class="flex">
+            <li><a routerLink="/order">RP</a></li>
+            <li><a routerLink="/deliver">PE</a></li>
+        </ul>
+    </div>
+   <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span>
 </nav>
