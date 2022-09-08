@@ -1,9 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
-import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
-// import * as auth from 'firebase/auth';
-import { Observable } from "rxjs";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { User } from "./user";
 
 @Injectable({
@@ -11,6 +9,8 @@ import { User } from "./user";
 })
 
 export class  AuthtenticationService {
+  currentUser:any;
+  userData:any;
 
   constructor(
     public auth: AngularFireAuth,
@@ -20,12 +20,15 @@ export class  AuthtenticationService {
 
       this.auth.authState.subscribe((user) => {
         if(user){
+          this.userData = user;
+          sessionStorage.setItem('user', JSON.stringify(this.userData));
+          JSON.parse(localStorage.getItem('user')!);
           if(user.email === 'admin@gmail.com') {
             this.router.navigate(['register'])
           } else {
             this.router.navigate(['order'])
           }
-        } 
+        }
       })
     }
 
@@ -43,20 +46,13 @@ export class  AuthtenticationService {
   }
 
   setUserData(user:User, uid:string) {
-    const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
-      `users/${uid}`
-    );
-    /* const userData: User = {
-      uid: user.uid,
-      username: user.username,
-      fullname: user.fullname,
-      email: user.email,
-      role: user.role
-    } */
+   const userRef = this.firestore.collection('users').doc(uid)
     return userRef.set(user, {
-      merge:true,
+    merge:true,
     });
   }
 
-
+  getUserByUid(uid:string){
+   return this.firestore.collection('users').doc(uid).valueChanges()
+  }
 }

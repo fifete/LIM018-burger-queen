@@ -9,7 +9,7 @@
         <li class="nav-item">
             <a href=""  class="nav-link">
                 <fa-icon [icon]="faBars"></fa-icon>
-                <span class="link-text">username - role</span>
+                <span class="link-text">{{user}}</span>
             </a>
         </li>
         <li class="nav-item">
@@ -27,21 +27,8 @@
         <li class="nav-item">
             <a href=""  class="nav-link">
                 <fa-icon [icon]="logout" ></fa-icon>
-                <!-- <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span> -->
-                <span class="link-text" (click)="authService.SignOut()" >Cerrar sesion</span>
+                <span class="link-text" (click)="authService.SignOut()">Cerrar sesion</span>
             </a>
         </li>
     </ul>
-<!--     <div class="nav-user-rol">
-        <p class="nav-user-name" >username</p>
-        <p class="nav-user-rol">role</p>
-     </div> -->
-    <!-- <li>
-        <a routerLink="/order">
-            <span>RP</span>
-            <p>Realizar pedido</p>
-        </a>
-    </li>
-    <li><a routerLink="/deliver">PE</a></li> -->
-   <!-- <span (click)="authService.SignOut()"><fa-icon [icon]="logout"></fa-icon></span> -->
 </nav>

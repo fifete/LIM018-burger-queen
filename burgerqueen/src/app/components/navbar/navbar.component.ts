@@ -10,12 +10,16 @@ import { faBars, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-ico
 export class NavbarComponent implements OnInit {
   faBars = faBars
   logout = faArrowRightFromBracket
-
+  userUid = this.authService.userData.uid
+  user:any
+  userData = this.authService.getUserByUid(this.userUid).subscribe((res:any)=> {
+    this.user = res.username
+  })
+  
   constructor(
     public authService: AuthtenticationService
-  ) { }
+  ) { console.log(this.userData) }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
