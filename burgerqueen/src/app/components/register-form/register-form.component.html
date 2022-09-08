@@ -1,1 +1,18 @@
-<p>register-form works!</p>
+<form>
+    <label>Nombre de usuario:</label>
+    <input type="text" placeholder="jhondoe" #username />
+
+    <label>Nombre y apellido:</label>
+    <input type="text" placeholder="Jhon Doe" #fullname/>
+
+    <label>Cargo:</label>
+    <input type="text" placeholder="chef o mesero" #role/>
+
+    <label>Email:</label>
+    <input type="email" placeholder="jhondoe@mail.com" #email/>
+
+    <label>Contraseña:</label>
+    <input type="password" placeholder="chef o mesero" #password/>
+
+    <button type="button" (click)="createUserFirestore(username.value, fullname.value, role.value, email.value, password.value)">Registrar</button>
+</form>
