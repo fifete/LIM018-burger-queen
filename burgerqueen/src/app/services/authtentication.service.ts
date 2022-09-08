@@ -19,13 +19,16 @@ export class  AuthtenticationService {
     ) {
 
       this.auth.authState.subscribe((user) => {
-        if (user?.email === 'admin@gmail.com') {
+        if(user){
+          if(user.email === 'admin@gmail.com') {
             this.router.navigate(['register'])
-        } else {
-          this.router.navigate(['order'])
-        }
+          } else {
+            this.router.navigate(['order'])
+          }
+        } 
       })
     }
+
   async SignIn(email: string, password:string) {
     return await this.auth.signInWithEmailAndPassword(email, password)
   }
@@ -35,22 +38,22 @@ export class  AuthtenticationService {
     await this.router.navigate(['login']);
   }
 
-  async SignUp(email:string, password:string) {
-    await this.auth.createUserWithEmailAndPassword(email, password)
+  SignUp(user:any) {
+    return this.auth.createUserWithEmailAndPassword(user.email, user.password)
   }
 
-  setUserData(user:any) {
+  setUserData(user:User, uid:string) {
     const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
-      `users/${user.uid}`
+      `users/${uid}`
     );
-    const userData: User = {
+    /* const userData: User = {
       uid: user.uid,
       username: user.username,
       fullname: user.fullname,
       email: user.email,
       role: user.role
-    }
-    return userRef.set(userData, {
+    } */
+    return userRef.set(user, {
       merge:true,
     });
   }

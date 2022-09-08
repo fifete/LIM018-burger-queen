@@ -1,18 +1,18 @@
 <form>
     <label>Nombre de usuario:</label>
-    <input type="text" placeholder="jhondoe" #username />
+    <input type="text" placeholder="jhondoe" [(ngModel)] = "username" name="username"/>
 
     <label>Nombre y apellido:</label>
-    <input type="text" placeholder="Jhon Doe" #fullname/>
+    <input type="text" placeholder="Jhon Doe" [(ngModel)] = "fullname" name="fullname"/>
 
     <label>Cargo:</label>
-    <input type="text" placeholder="chef o mesero" #role/>
+    <input type="text" placeholder="chef o mesero" [(ngModel)] = "role" name="role"/>
 
     <label>Email:</label>
-    <input type="email" placeholder="jhondoe@mail.com" #email/>
+    <input type="email" placeholder="jhondoe@mail.com" [(ngModel)] = "email" name="email"/>
 
     <label>Contraseña:</label>
-    <input type="password" placeholder="chef o mesero" #password/>
+    <input type="password" placeholder="chef o mesero" [(ngModel)] = "password" name="password"/>
 
-    <button type="button" (click)="createUserFirestore(username.value, fullname.value, role.value, email.value, password.value)">Registrar</button>
+    <button type="button" (click)="createUserFirestore()" [disabled]="!username || !fullname || !role || !email || !password">Registrar</button>
 </form>
