@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AuthtenticationService } from './services/authtentication.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { SummaryItemComponent } from './components/summary-item/summary-item.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -40,7 +43,9 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule, FontAwesomeModule // storage
+    AngularFireStorageModule, 
+    FontAwesomeModule, // storage
+    FormsModule
   ],
   declarations: [
     AppComponent,
@@ -54,7 +59,9 @@ const firebaseConfig = {
     InputComponent,
     CategoryComponent,
     ButtonComponent,
-    ButtonMenuComponent
+    ButtonMenuComponent,
+    RegisterFormComponent,
+    SummaryItemComponent
   ],
   providers: [AuthtenticationService],
   bootstrap: [AppComponent]
