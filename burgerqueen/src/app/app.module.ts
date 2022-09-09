@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthtenticationService } from './services/authtentication.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { SummaryItemComponent } from './components/summary-item/summary-item.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -59,7 +60,8 @@ const firebaseConfig = {
     CategoryComponent,
     ButtonComponent,
     ButtonMenuComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    SummaryItemComponent
   ],
   providers: [AuthtenticationService],
   bootstrap: [AppComponent]

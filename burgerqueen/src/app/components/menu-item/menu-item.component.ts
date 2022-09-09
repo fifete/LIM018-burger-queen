@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ElementRef, ViewChild , AfterViewInit  } from '@angular/core';
 import { Item } from 'src/assets/menu';
-
+/* ---- Change file name ----- */
+import { AuthtenticationService } from 'src/app/services/authtentication.service';
 @Component({
   selector: 'app-menu-item',
   styleUrls: ['./menu-item.component.css'],
@@ -29,6 +30,15 @@ export class MenuItemComponent {
     }
   } */
 
+  /* ---- Change file name ----- */
+  constructor(public authService : AuthtenticationService) {}
+  getItemInfo (name:string, price:string) {
+    let item = {
+      name: name,
+      price: price
+    }
+    this.authService.addItemToSummaryTable(item)
+  }
 }
 
 /* export class MenuItemComponent implements OnInit {
