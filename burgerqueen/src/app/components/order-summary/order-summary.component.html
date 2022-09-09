@@ -21,21 +21,11 @@
     </tr>
   </thead>
   <tbody class="table-body" >
-    <tr>
-        <td>Café americano</td>
-        <td>
-          <div class="table-counter" >
-            <span>+</span>
-            <p>1</p>
-            <span>-</span>
-          </div>
-        </td>
-        <td>5.90</td>
-        <td class="table-trash" >
-          <fa-icon [icon]="trash"></fa-icon>
-        </td>
-    </tr>
-    <tr>
+    <app-summary-item
+      *ngFor="let filteredItem of filteredItems "
+      [filteredItem] = "filteredItem"
+    ></app-summary-item>
+    <!-- <tr>
       <td>Café americano</td>
       <td>
         <div class="table-counter" >
@@ -48,7 +38,7 @@
       <td class="table-trash" >
         <fa-icon [icon]="trash"></fa-icon>
       </td>
-  </tr>
+    </tr> -->
   </tbody>
   <tfoot class="table-total" >
     <tr>
