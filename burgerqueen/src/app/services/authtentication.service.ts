@@ -13,7 +13,7 @@ export class  AuthtenticationService {
   userData:any;
   /* ---- Change file name ----- */
   allItems = []
-  filteredItems
+  filteredItems = []
   
   constructor(
     public auth: AngularFireAuth,
@@ -65,11 +65,16 @@ export class  AuthtenticationService {
     // const toFindDuplicates = arry => arry.filter((item, index) => arr.indexOf(item) !== index)
     this.allItems.push(item)
     let set= new Set( this.allItems.map(i => JSON.stringify(i) ) )
-    this.filteredItems = Array.from( set ).map( i => JSON.parse(i));
+    let arr = Array.from( set ).map( i => JSON.parse(i));
+    console.log(set);
+    console.log(arr);
+    
+    console.log(this.filteredItems.push(...arr));
+    return this.filteredItems.push(arr)
     /* Argument of type '(text: string, reviver?: (this: any, key: string, value: any) => any) => any' 
     is not assignable to parameter of type '(value: string, index: number, array: string[]) => any'. */
     // this.filteredItems = new Set(this.allItems)
-    console.log(this.filteredItems);
+    // return this.filteredItems
     // return this.products
   }
 

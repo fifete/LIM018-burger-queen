@@ -8,6 +8,8 @@ import { AuthtenticationService } from 'src/app/services/authtentication.service
 export class OrderSummaryComponent implements OnInit {
   filteredItems = this.auth.filteredItems
   constructor(public auth: AuthtenticationService) { 
+    console.log(this.auth.filteredItems);
+    
   }
   
   ngOnInit(): void {
