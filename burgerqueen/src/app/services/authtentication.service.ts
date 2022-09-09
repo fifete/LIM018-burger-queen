@@ -45,17 +45,6 @@ export class  AuthtenticationService {
     return this.auth.createUserWithEmailAndPassword(user.email, user.password)
   }
 
-  /* setUserData(user:User, uid:string) {
-   const userRef = this.firestore.collection('users').doc(uid)
-    return userRef.set(user, {
-    merge:true,
-    });
-  }
-
-  getUserByUid(uid:string){
-   return this.firestore.collection('users').doc(uid).valueChanges()
-  }
- */
   /* ---- Change file name ----- */
   addItemToSummaryTable(item:{}) {
     // console.log('agr. item: ' + JSON.stringify(item))
