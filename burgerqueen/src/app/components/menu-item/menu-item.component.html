@@ -1,8 +1,8 @@
 <div class="menu-item flex">
   <img src="{{item.img}}" />
   <div class="menu-item-info flex">
-      <p>{{item.name}}</p>
-      <p>${{item.price}}</p>
-      <button #additem class="add-menu-item">Agregar</button>
+      <p #itemName >{{item.name}}</p>
+      <p #itemPrice>${{item.price}}</p>
+      <button  class="add-menu-item">Agregar</button>
   </div>
 </div>

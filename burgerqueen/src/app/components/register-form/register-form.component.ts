@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthtenticationService } from 'src/app/services/authtentication.service';
 import { User } from 'src/app/services/user';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-register-form',
@@ -15,6 +16,7 @@ export class RegisterFormComponent implements OnInit {
   password:string;
 
   constructor(
+    public fireService: FirestoreService,
     public authService: AuthtenticationService
   ) { }
 
@@ -37,7 +39,7 @@ export class RegisterFormComponent implements OnInit {
     this.authService.SignUp(userNewAccount)
     .then((resp) => {
       let user:any = resp.user;
-      this.authService.setUserData(userData, user.uid) 
+      this.fireService.setUserData(userData, user.uid) 
     })
     .catch(err => {
       console.log(err)
