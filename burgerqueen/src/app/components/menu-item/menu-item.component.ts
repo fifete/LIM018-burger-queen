@@ -14,21 +14,6 @@ export class MenuItemComponent {
   ngAfterViewInit() {
     console.log(this.additem);
   }
-    /* this.button.addEventListener('click', (clickEvent: MouseEvent) => {
-      console.log('Click Event Details: ', clickEvent)
-    }) */
-  /* ngAfterViewInit() {
-    console.log(this.addItem.nativeElement);
-  } */
-  /* constructor() {
-    @ViewChild('addItem') button: ElementRef;
-    this.button.addEventListener('click', (clickEvent: MouseEvent) => {
-      console.log('Click Event Details: ', clickEvent)
-    })
-    ngAfterViewInit() {
-      console.log(this.input.nativeElement);
-    }
-  } */
 
   /* ---- Change file name ----- */
   constructor(public authService : AuthtenticationService) {}

@@ -6,13 +6,14 @@ import { AuthtenticationService } from 'src/app/services/authtentication.service
   templateUrl: './order-summary.component.html'
 })
 export class OrderSummaryComponent implements OnInit {
-  filteredItems = this.auth.filteredItems
-  constructor(public auth: AuthtenticationService) { 
-    console.log(this.auth.filteredItems);
-    
-  }
+  filteredItems:any
+  constructor(public auth: AuthtenticationService) { }
   
-  ngOnInit(): void {
-    
+  ngOnInit(): void { }
+
+  filterdItems() {
+   let set = new Set( this.auth.allItems.map(i => JSON.stringify(i) ) )
+   return Array.from(set).map( i => JSON.parse(i))
   }
+
 }
