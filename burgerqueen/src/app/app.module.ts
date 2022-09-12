@@ -23,6 +23,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AuthtenticationService } from './services/authtentication.service';
+import { MenuItemServiceTs } from './services/menu-item.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { SummaryItemComponent } from './components/summary-item/summary-item.component';
@@ -63,7 +64,7 @@ const firebaseConfig = {
     RegisterFormComponent,
     SummaryItemComponent
   ],
-  providers: [AuthtenticationService],
+  providers: [AuthtenticationService, MenuItemServiceTs],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
