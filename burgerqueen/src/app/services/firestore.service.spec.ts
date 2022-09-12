@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MenuItemServiceTs } from './menu-item.service';
+import { FirestoreService } from './firestore.service';
 
-describe('MenuItemServiceTsService', () => {
-  let service: MenuItemServiceTs;
+describe('FirestoreService', () => {
+  let service: FirestoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MenuItemServiceTs);
+    service = TestBed.inject(FirestoreService);
   });
 
   it('should be created', () => {

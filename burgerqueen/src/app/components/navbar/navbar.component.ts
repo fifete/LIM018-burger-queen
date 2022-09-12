@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthtenticationService } from 'src/app/services/authtentication.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 import { faBars, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -11,14 +12,17 @@ export class NavbarComponent implements OnInit {
   faBars = faBars
   logout = faArrowRightFromBracket
   userUid = this.authService.userData.uid
-  user:any
-  userData = this.authService.getUserByUid(this.userUid).subscribe((res:any)=> {
-    this.user = res.username
+  username:any
+  role:any
+  userData = this.fireService.getUserByUid(this.userUid).subscribe((res:any)=> {
+    this.username = res.username;
+    this.role = res.role;
   })
   
   constructor(
+    public fireService: FirestoreService,
     public authService: AuthtenticationService
-  ) { console.log(this.userData) }
+  ) {}
 
   ngOnInit(): void { }
 
