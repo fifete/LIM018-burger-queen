@@ -19,4 +19,6 @@ export class TagMakeOrderComponent implements OnInit {
     console.log('mostrando lunch')
   }
 
+  // Get the current date and time as a date-time value.
+  today: number = Date.now();
 }
