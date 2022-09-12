@@ -11,9 +11,12 @@ export class OrderSummaryComponent implements OnInit {
   
   ngOnInit(): void { }
 
+  /*
+   <!-- *ngFor="let filteredItem of filterdItems() "
+      [filteredItem] = "filteredItem" --> 
   filterdItems() {
    let set = new Set( this.auth.allItems.map(i => JSON.stringify(i) ) )
    return Array.from(set).map( i => JSON.parse(i))
-  }
+  } */
 
 }

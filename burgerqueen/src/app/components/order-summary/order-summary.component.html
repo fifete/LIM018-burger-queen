@@ -22,8 +22,6 @@
   </thead>
   <tbody class="table-body" >
     <app-summary-item
-      <!-- *ngFor="let filteredItem of filterdItems() "
-      [filteredItem] = "filteredItem" -->
       *ngFor="let filteredItem of filteredItems| keyvalue "
       [filteredItem] = "filteredItem.value"
     ></app-summary-item>

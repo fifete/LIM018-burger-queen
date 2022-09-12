@@ -2,9 +2,9 @@
     <td>{{filteredItem.name}}</td>
     <td>
       <div class="table-counter" >
-        <span>+</span>
-        <p>1</p>
-        <span>-</span>
+        <span (click)="counter('increase')" >+</span>
+        <p>{{accumulator}}</p>
+        <span (click)="counter('decrease')">-</span>
       </div>
     </td>
     <td>{{filteredItem.price}}</td>

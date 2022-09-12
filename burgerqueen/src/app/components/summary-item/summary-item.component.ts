@@ -8,12 +8,26 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 })
 export class SummaryItemComponent implements OnInit {
   trash= faTrashCan
+  accumulator = 1;
   @Input() filteredItem;
   
   constructor() { }
   
-  ngOnInit(): void {
-    console.log(this.filteredItem);
+  ngOnInit(): void { }
+
+  counter(value:string) {
+    switch(value){
+      case 'increase':
+        this.accumulator++;
+        break
+      case 'decrease':
+        this.accumulator--
+        break;
+      default:
+        this.accumulator = 1;
+        break;
+
+    }
   }
 
 }
