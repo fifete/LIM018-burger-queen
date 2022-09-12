@@ -1,6 +1,9 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+
+//Import Date in spanish format
+import localePy from "@angular/common/locales/es-PE"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +30,7 @@ import { MenuItemServiceTs } from './services/menu-item.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { SummaryItemComponent } from './components/summary-item/summary-item.component';
+import { registerLocaleData } from '@angular/common';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -37,6 +41,7 @@ const firebaseConfig = {
   appId: "1:273864718221:web:6a24d5cf43327eb8bf6fc4"
 };
 
+registerLocaleData(localePy, 'es')
 @NgModule({
   imports: [
     BrowserModule,
@@ -64,7 +69,11 @@ const firebaseConfig = {
     RegisterFormComponent,
     SummaryItemComponent
   ],
-  providers: [AuthtenticationService, MenuItemServiceTs],
+  providers: [
+    AuthtenticationService,
+    MenuItemServiceTs,
+    { provide: LOCALE_ID, useValue: 'es'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

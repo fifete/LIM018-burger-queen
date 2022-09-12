@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 @Component({
   selector: 'app-order-summary',
@@ -11,15 +11,28 @@ export class OrderSummaryComponent implements OnInit {
     console.log(this.menuItemService.filteredItems);
     
   }
-  
-  ngOnInit(): void { }
+  ngOnInit(): void {}
+  calcTotal() {
+    if (!this.isArrayEmpty()) {
+      if (Object.keys(this.filteredItems).length < 2) {
+        const targetProduct:any = Object.values(this.filteredItems)[0]
+        return targetProduct.quantity * targetProduct.price;
+      } else {
+        // return this.filteredItems.reduce((a, b) => (a.quantity * a.price) + (b.quantity * b.price));
+        // const total = Object.values(this.filteredItems).reduce(({a}, {b}) => (a.quantity * a.price) + (b.quantity * b.price), 0)
+        let total = 0
+        for (const key in this.filteredItems) {
+          console.log(this.filteredItems)
+          let subTotal = this.filteredItems[key].price * this.filteredItems[key].quantity
+          return total += subTotal
+        }
+      }
+    } else {
+      return 0;
+    }
+  }
 
-  /*
-   <!-- *ngFor="let filteredItem of filterdItems() "
-      [filteredItem] = "filteredItem" --> 
-  filterdItems() {
-   let set = new Set( this.auth.allItems.map(i => JSON.stringify(i) ) )
-   return Array.from(set).map( i => JSON.parse(i))
-  } */
-
+  isArrayEmpty(): boolean {
+    return Object.keys(this.filteredItems).length < 1
+  }
 }
