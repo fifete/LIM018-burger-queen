@@ -1,14 +1,14 @@
-<tr>
+<tr data-id={{filteredItem.id}} #itemRow>
     <td>{{filteredItem.name}}</td>
     <td>
       <div class="table-counter" >
-        <span (click)="counter('increase')" >+</span>
-        <p>{{accumulator}}</p>
+        <span (click)="counter('increase')">+</span>
+        <p>{{filteredItem.quantity}}</p>
         <span (click)="counter('decrease')">-</span>
       </div>
     </td>
     <td>{{filteredItem.price}}</td>
     <td class="table-trash" >
-      <fa-icon [icon]="trash"></fa-icon>
+      <fa-icon [icon]="trash" ></fa-icon>
     </td>
 </tr>
