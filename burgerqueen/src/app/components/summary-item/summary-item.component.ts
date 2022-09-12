@@ -9,9 +9,11 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 export class SummaryItemComponent implements OnInit {
   trash= faTrashCan
   @Input() filteredItem;
+  
   constructor() { }
-
+  
   ngOnInit(): void {
+    console.log(this.filteredItem);
   }
 
 }

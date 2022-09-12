@@ -9,8 +9,10 @@ import { Router } from "@angular/router";
 export class  AuthtenticationService {
   currentUser:any;
   userData:any;
+
   /* ---- Change file name ----- */
   allItems = []
+  filteredItems = {}
   
   constructor(
     public auth: AngularFireAuth,
@@ -45,8 +47,10 @@ export class  AuthtenticationService {
   }
 
   /* ---- Change file name ----- */
-  addItemToSummaryTable(item:{}) {
-    this.allItems.push(item)
+  /* addItemToSummaryTable(item:{}) {
+    this.allItems.push(item)} */
+  addItemToSummaryTable(item:any) {
+    this.filteredItems[item.name] = item
   }
 
 }

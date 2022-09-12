@@ -6,6 +6,7 @@ import { AuthtenticationService } from 'src/app/services/authtentication.service
   templateUrl: './order-summary.component.html'
 })
 export class OrderSummaryComponent implements OnInit {
+  filteredItems:any = this.auth.filteredItems
   constructor(public auth: AuthtenticationService) { }
   
   ngOnInit(): void { }
