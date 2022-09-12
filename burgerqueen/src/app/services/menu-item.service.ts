@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class MenuItemServiceTs {
   filteredItems = {}
-
   constructor() { }
 
   addItemToSummaryTable(item:any) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { MenuItemServiceTs } from 'src/app/services/menu-item.service'; 
 @Component({
@@ -17,10 +17,11 @@ export class SummaryItemComponent implements OnInit {
   ngOnInit(): void { }
 
   counter(value:string) {
+    
+
     for (const key in this.itemsFromOrder) {
       if (this.itemsFromOrder[key].id === this.itemRow.nativeElement.id) {
         let currentItem = this.itemsFromOrder[key]
-
         if(value === 'increase') {
           currentItem.quantity++;
         } else if ( currentItem.quantity > 1) {
