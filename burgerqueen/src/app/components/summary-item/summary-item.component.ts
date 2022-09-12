@@ -18,7 +18,7 @@ export class SummaryItemComponent implements OnInit {
   counter(value:string) {
     if(value === 'increase') {
       this.accumulator++;
-    } else if ( this.accumulator > 1 && value === 'decrease') {
+    } else if ( this.accumulator > 1 ) {
         this.accumulator--;
     }
   }
