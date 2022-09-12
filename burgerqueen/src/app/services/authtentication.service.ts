@@ -11,11 +11,7 @@ import { User } from "./user";
 export class  AuthtenticationService {
   currentUser:any;
   userData:any;
-  /* ---- Change file name ----- */
-  /* allItems = []
-  filteredItems = [] */
-  filteredItems = {}
-  
+
   constructor(
     public auth: AngularFireAuth,
     public router: Router,
@@ -58,28 +54,6 @@ export class  AuthtenticationService {
 
   getUserByUid(uid:string){
    return this.firestore.collection('users').doc(uid).valueChanges()
-  }
-
-  /* ---- Change file name ----- */
-  addItemToSummaryTable(item:any) {
-    // console.log('agr. item: ' + JSON.stringify(item))
-    // const toFindDuplicates = arry => arry.filter((item, index) => arr.indexOf(item) !== index)
-    /* this.allItems.push(item)
-    let set= new Set( this.allItems.map(i => JSON.stringify(i) ) )
-    let arr = Array.from( set ).map( i => JSON.parse(i));
-    console.log(set);
-    console.log(arr);
-    
-    console.log(this.filteredItems.push(...arr));
-    return this.filteredItems.push(arr) */
-
-    this.filteredItems[item.name] = item
-
-    /* Argument of type '(text: string, reviver?: (this: any, key: string, value: any) => any) => any' 
-    is not assignable to parameter of type '(value: string, index: number, array: string[]) => any'. */
-    // this.filteredItems = new Set(this.allItems)
-    // return this.filteredItems
-    // return this.products
   }
 
 }
