@@ -7,8 +7,8 @@
         <span (click)="counter('decrease')">-</span>
       </div>
     </td>
-    <td>{{filteredItem.price}}</td>
+    <td>{{filteredItem.quantity * filteredItem.price}}</td>
     <td class="table-trash" >
-      <fa-icon [icon]="trash" ></fa-icon>
+      <fa-icon [icon]="trash" (click) = "deleteItem(filteredItem.id)"></fa-icon>
     </td>
 </tr>
