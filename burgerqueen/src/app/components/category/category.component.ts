@@ -12,4 +12,8 @@ export class CategoryComponent {
   showBreakfast(menu: any[]):any {
     return menu.filter(item => item.category === 'desayuno');
   }
+
+  showLunch(menu: any[]):any {
+    return menu.filter(item => item.category != 'desayuno');
+  }
 }
