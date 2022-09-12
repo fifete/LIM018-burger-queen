@@ -16,11 +16,7 @@ export class MenuItemComponent {
 
   /* ---- Change file name ----- */
   constructor(public menuItemService : MenuItemServiceTs) {}
-  getItemInfo (name:string, price:string) {
-    let item = {
-      name: name,
-      price: price
-    }
-    this.menuItemService.addItemToSummaryTable(item)
+  getItemInfo (itemData:Item) {
+    this.menuItemService.addItemToSummaryTable(itemData)
   }
 }

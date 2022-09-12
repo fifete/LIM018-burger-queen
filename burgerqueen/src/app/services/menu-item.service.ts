@@ -9,6 +9,6 @@ export class MenuItemServiceTs {
   constructor() { }
 
   addItemToSummaryTable(item:any) {
-    this.filteredItems[item.name] = item
+    this.filteredItems[item.id] = item
   }
 }
