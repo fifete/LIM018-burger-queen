@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
 import { User } from './user';
 
 @Injectable({
@@ -7,7 +7,9 @@ import { User } from './user';
 })
 export class FirestoreService {
 
-  constructor( public firestore: AngularFirestore ) { }
+  productsRef = this.firestore.collection('orders')
+
+  constructor( public firestore: AngularFirestore ) {  }
 
   setUserData(user:User, uid:string) {
     const userRef = this.firestore.collection('users').doc(uid)
@@ -18,6 +20,10 @@ export class FirestoreService {
  
    getUserByUid(uid:string){
     return this.firestore.collection('users').doc(uid).valueChanges()
+   }
+
+   addMenuOrder(order:{}) {
+   return this.productsRef.add(order)
    }
    
 }

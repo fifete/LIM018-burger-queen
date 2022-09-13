@@ -10,4 +10,10 @@ export class MenuItemServiceTs {
   addItemToSummaryTable(item:any) {
     this.filteredItems[item.id] = item
   }
+
+  clearOrder() {
+    for (let items in this.filteredItems ) delete this.filteredItems[items];
+  }
+
+  
 }

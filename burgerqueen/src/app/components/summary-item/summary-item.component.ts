@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { MenuItemServiceTs } from 'src/app/services/menu-item.service'; 
 @Component({

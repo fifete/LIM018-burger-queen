@@ -47,3 +47,10 @@ app-summary-item {
   display: inline-block;
   width: 100%;
 }
+
+.maker-oder-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 33px 0;
+}
+

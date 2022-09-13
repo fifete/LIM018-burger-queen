@@ -15,4 +15,5 @@ export class TagMakeOrderComponent implements OnInit {
   
   // Get the current date and time as a date-time value.
   today: number = Date.now();
+
 }

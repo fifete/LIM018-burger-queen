@@ -1,7 +1,13 @@
 <div class="order-summary">
-  <div class="order-summary-inputs"  >
-   <app-input label="Cliente" type="text" placeholder= "Susana" #client></app-input>
-    <app-input label="N° de mesa" type="text" placeholder= "N° 1" #ndemesa></app-input>
+  <div class="order-summary-inputs">
+    <div>
+      <label>Cliente</label>
+      <input type=text  placeholder="Susana" #client required/>
+    </div>
+    <div>
+      <label>N° de mesa</label>
+      <input type=number  placeholder="N° 1" #mesa required />
+    </div>
   </div>
 <table class="order-table">
   <thead class="table-head" >
@@ -26,4 +32,8 @@
     </tr>
   </tfoot>
 </table>
+</div>
+<div class="maker-oder-buttons" >
+  <app-button text = "Confirmar" (click)="sendOrder(client.value, mesa.value)"></app-button>
+  <app-button text = "Cancelar" (click)="cancelOrder()" ></app-button>
 </div>
