@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10%;
-    gap: 1.5em 0%;
+    gap: 1.5em 6%;
 }
 
 app-menu-item {
@@ -14,9 +14,10 @@ app-menu-item {
 
 .options-button {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 1.5em;
   }
-  app-button-menu {
-    width: 40%;
-  }
+
+app-button-menu {
+  width: 47%;
+}

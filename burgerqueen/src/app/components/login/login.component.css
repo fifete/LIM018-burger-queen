@@ -11,6 +11,12 @@ p {
   font-weight: 400;
   font-size: 22px;
 }
+
+.login-error-txt {
+  font-size: 18px;
+  color: rgb(233, 82, 82);
+}
+
 img {
   margin-top: -22px;
 }

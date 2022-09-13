@@ -1,15 +1,22 @@
 .table-body tr {
     margin-top: 22px;
-  }
+}
   
-  .table-body td , .table-total td{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #E9E8ED;
-    font-style: normal;
-    padding: 15px 0;
+.table-body td , .table-total td{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #E9E8ED;
+  font-style: normal;
+  padding: 15px 0;
+}
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 5rem 2rem;
+    text-align: center;
+    align-items: center;
   }
   
   .table-total td {
@@ -24,6 +31,7 @@
     background-color: #FFE7CA;
     padding: 4px 7px;
     border-radius: 5px;
+    margin: auto;
   }
   
   .table-counter span {
