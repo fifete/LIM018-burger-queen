@@ -2,10 +2,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10%;
-    gap: 1.5em 10%;
+    gap: 1.5em 6%;
 }
 
 app-menu-item {
     color: #104E5B;
     line-height: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.options-button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+  }
+
+app-button-menu {
+  width: 47%;
 }

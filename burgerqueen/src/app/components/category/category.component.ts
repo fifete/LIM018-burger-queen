@@ -8,8 +8,13 @@ import { ITEMS } from 'src/assets/menu';
 })
 export class CategoryComponent {
   menu = ITEMS;
+  items:any = this.menu.filter(item => item.category === 'desayuno');
 
-  showBreakfast(menu: any[]):any {
-    return menu.filter(item => item.category === 'desayuno');
+  showItems(value:string, menu:any[]) {
+    if(value === 'desayuno') {
+      this.items = menu.filter(item => item.category === 'desayuno');
+    } else {
+      this.items = menu.filter(item => item.category != 'desayuno');
+    }
   }
 }

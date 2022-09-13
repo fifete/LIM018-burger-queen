@@ -9,6 +9,6 @@
     </td>
     <td>{{filteredItem.quantity * filteredItem.price}}</td>
     <td class="table-trash" >
-      <fa-icon [icon]="trash" (click) = "deleteItem(filteredItem.id)"></fa-icon>
+      <fa-icon [icon]="trash" (click)="deleteItem(filteredItem.id)"></fa-icon>
     </td>
 </tr>

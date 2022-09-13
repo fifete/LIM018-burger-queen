@@ -1,18 +1,24 @@
-<form>
-    <label>Nombre de usuario:</label>
-    <input type="text" placeholder="jhondoe" [(ngModel)] = "username" name="username"/>
-
-    <label>Nombre y apellido:</label>
-    <input type="text" placeholder="Jhon Doe" [(ngModel)] = "fullname" name="fullname"/>
-
-    <label>Cargo:</label>
-    <input type="text" placeholder="chef o mesero" [(ngModel)] = "role" name="role"/>
-
-    <label>Email:</label>
-    <input type="email" placeholder="jhondoe@mail.com" [(ngModel)] = "email" name="email"/>
-
-    <label>Contraseña:</label>
-    <input type="password" placeholder="chef o mesero" [(ngModel)] = "password" name="password"/>
-
-    <button type="button" (click)="createUserFirestore()" [disabled]="!username || !fullname || !role || !email || !password">Registrar</button>
-</form>
+<app-navbar></app-navbar>
+<main class="main-form">
+    <div class="container">
+        <h2>Formulario de registro</h2>
+        <form>
+            <label>Nombre de usuario:</label>
+            <input type="text" placeholder="jhondoe" [(ngModel)] = "username" name="username"/>
+        
+            <label>Nombre y apellido:</label>
+            <input type="text" placeholder="Jhon Doe" [(ngModel)] = "fullname" name="fullname"/>
+        
+            <label>Cargo:</label>
+            <input type="text" placeholder="chef o mesero" [(ngModel)] = "role" name="role"/>
+        
+            <label>Email:</label>
+            <input type="email" placeholder="jhondoe@mail.com" [(ngModel)] = "email" name="email"/>
+        
+            <label>Contraseña:</label>
+            <input type="password" placeholder="contraseña" [(ngModel)] = "password" name="password"/>
+        
+            <button type="button" (click)="createUserFirestore()" [disabled]="!username || !fullname || !role || !email || !password">Registrar</button>
+        </form>
+    </div>
+</main>

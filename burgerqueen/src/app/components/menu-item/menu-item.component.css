@@ -1,4 +1,5 @@
 .menu-item {
+    width: 100%;
     font-family: 'Rubik', sans-serif;
     background-color: white;
     border-radius: .5em;
@@ -10,19 +11,40 @@
 }
 
 .menu-item-info {
-    font-size: 14px;
+    font-size: 18px;
     word-wrap: break-word;
-    flex-basis: 60%;
+    flex-basis: 50%;
     flex-direction: column;
     gap: .8em;
 }
 
 .add-menu-item {
+    width: 150px;
+    height: 45px;
+
     background: #FFE7CA;
     border: 0;
     border-radius: .5em;
     padding: .2em .4em;
-    color: inherit;
+
+    font-weight: 500;
+    font-size: 18px;
+    color: #104E5B;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.menu-item-img {
+    margin-inline: auto;
+}
+
+.menu-item img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 90px;
+    aspect-ratio: 1;
+    width: 100%;
+    object-position: center;
 }
 
 .flex {

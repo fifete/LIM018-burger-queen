@@ -20,6 +20,7 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+  font-family: 'rubik', serif;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -95,7 +96,7 @@ app-login {
   align-items: center;
 }
 
-app-tag-make-order{
+app-tag-make-order, app-register-form{
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -107,4 +108,18 @@ app-root {
   height: 100%;
   width: 100%;
   display: inline-block;
+}
+
+
+app-navbar {
+  transition: width 600ms ease;
+  position: fixed;
+  width: 5rem;
+  height: 100%;
+  top: 0;
+  width: 5rem;
+}
+
+app-navbar:hover {
+  width: 16rem;
 }

@@ -34,31 +34,8 @@ h2 {
   font-size: 18px;
  }
 
-.options-button {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5em;
-}
-
-app-button-menu {
-  width: 45%;
-}
-
 .maker-oder-buttons {
   display: flex;
   justify-content: space-between;
   margin: 33px 0;
-}
-
-app-navbar {
-  transition: width 600ms ease;
-  position: fixed;
-  width: 5rem;
-  height: 100%;
-  top: 0;
-  width: 5rem;
-}
-
-app-navbar:hover {
-  width: 16rem;
 }

@@ -1,6 +1,10 @@
+<div class="options-button" >
+  <app-button-menu text = "Desayuno" (click)="showItems('desayuno', menu)"></app-button-menu>
+  <app-button-menu text = "Almuerzo y cena" (click)="showItems('almuerzo', menu)"></app-button-menu>
+</div>
 <section class="menu-items">
   <app-menu-item
-  *ngFor="let item of showBreakfast(menu) "
+  *ngFor="let item of items"
   [item] = "item"
   >
   </app-menu-item>
