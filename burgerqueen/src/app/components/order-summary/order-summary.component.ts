@@ -7,12 +7,9 @@ import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 })
 export class OrderSummaryComponent implements OnInit {
   filteredItems:any = this.menuItemService.filteredItems
-  constructor(public menuItemService : MenuItemServiceTs) { 
-    console.log(this.menuItemService.filteredItems);
-    
-  }
+  constructor(public menuItemService : MenuItemServiceTs) { }
   ngOnInit(): void {}
-  
+
   calcTotal() {
     if (!this.isArrayEmpty()) {
       if (Object.keys(this.filteredItems).length < 2) {

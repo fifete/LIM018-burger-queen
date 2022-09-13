@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 18px;
+    color: #282828;
+}
+
+input {
+    margin: 7px 0;
+    width: 286px;
+    height: 40px;
+    padding: 11px 13px 12px;
+
+    color: #282828;
+}
+input::placeholder {
+    color: #AFAFAF;
+}
+
+:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 2px #7BB9FA;
+}
+
+button {
+    width: 500px;
+    height: 44px;
+
+    margin: 22px 0;
+    border-radius: 6px;
+    background-color: #7BB9FA;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
