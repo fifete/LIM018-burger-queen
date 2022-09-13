@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthtenticationService } from 'src/app/services/authtentication.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
-import { faBars, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faArrowRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +10,7 @@ import { faBars, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-ico
 })
 export class NavbarComponent implements OnInit {
   faBars = faBars
+  user = faUser
   logout = faArrowRightFromBracket
   userUid = this.authService.userData.uid
   username:any

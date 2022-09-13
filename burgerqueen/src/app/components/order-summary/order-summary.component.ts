@@ -24,8 +24,9 @@ export class OrderSummaryComponent implements OnInit {
         for (const key in this.filteredItems) {
           console.log(this.filteredItems)
           let subTotal = this.filteredItems[key].price * this.filteredItems[key].quantity
-          return total += subTotal
+          total += subTotal
         }
+        return total
       }
     } else {
       return 0;
