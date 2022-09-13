@@ -8,11 +8,11 @@
 
 .order-summary-inputs {
   display: flex;
-  gap: 150px;
+  gap: 395px;
 }
 
 table {
-  width: 510px;
+  width: 80%;
   height: 100%;
   background-color: white;
   padding: 22px 40px;

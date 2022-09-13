@@ -17,8 +17,6 @@ export class SummaryItemComponent implements OnInit {
   ngOnInit(): void { }
 
   counter(value:string) {
-    
-
     for (const key in this.itemsFromOrder) {
       if (this.itemsFromOrder[key].id === this.itemRow.nativeElement.id) {
         let currentItem = this.itemsFromOrder[key]

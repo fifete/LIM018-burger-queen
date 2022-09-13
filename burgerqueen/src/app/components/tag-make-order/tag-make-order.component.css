@@ -25,11 +25,11 @@ h2 {
  }
 .options-button {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 1.5em;
 }
 app-button-menu {
-  width: 45%;
+  width: 40%;
 }
 .maker-oder-buttons {
   display: flex;
