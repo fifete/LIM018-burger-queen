@@ -1,24 +1,24 @@
 <nav class="navigation">
     <ul class="nav-items">
         <li class="logo">
-            <a href=""  class="nav-link">
+            <span class="nav-link">
                 <span class="link-text logo-text">BurguerQueen</span>
                 <fa-icon [icon]="faBars"></fa-icon>
-            </a>
+            </span>
         </li>
         <li class="nav-item">
-            <a href=""  class="nav-link">
-                <fa-icon [icon]="faBars"></fa-icon>
+            <span class="nav-link">
+                <fa-icon [icon]="user"></fa-icon>
                 <span class="link-text">{{username}}-{{role}}</span>
-            </a>
+            </span>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-tab">
             <a routerLink="/order"  class="nav-link">
                 <span class="nav-text-icon">RP</span>
                 <span class="link-text">Realizar pedido</span>
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-tab">
             <a routerLink="/deliver"  class="nav-link">
                 <span class="nav-text-icon">PE</span>
                 <span class="link-text">Pedido por entregar</span>
