@@ -17,6 +17,6 @@ app-menu-item {
     justify-content: space-around;
     margin-bottom: 1.5em;
   }
-  app-button-menu {
-    width: 40%;
-  }
+app-button-menu {
+  width: 40%;
+}
