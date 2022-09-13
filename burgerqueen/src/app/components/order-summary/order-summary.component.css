@@ -8,21 +8,42 @@
 
 .order-summary-inputs {
   display: flex;
-  gap: 150px;
+  /* gap: 150px; */
+  width: 100%;
+  justify-content: space-between;
 }
 
-table {
-  width: 510px;
-  height: 100%;
+.order-table {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  width: 100%;
+
   background-color: white;
-  padding: 22px 40px;
+  padding: 20px 15px;
   border-radius: 20px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 5rem 2rem;
+  text-align: center;
 }
 
 .table-head th {
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  text-align: justify;
+}
+
+.table-total tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 5rem 2rem;
+  text-align: center;
+}
+
+app-summary-item {
+  display: inline-block;
+  width: 100%;
 }
