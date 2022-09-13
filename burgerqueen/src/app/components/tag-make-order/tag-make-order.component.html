@@ -7,25 +7,11 @@
       <p>Hora: {{today | date: 'h:mm a'}}</p>
     </div>
   </div>
-  <div class="options-button" >
-    <app-button-menu
-    text = "Desayuno"
-    (btnClick)="showBreakfast()"
-    ></app-button-menu>
-    <app-button-menu
-    text = "Almuerzo y cena"
-    (btnClick)="showLunch()"
-    ></app-button-menu>
-  </div>
   <app-category></app-category>
   <h2>Relizar pedido</h2>
   <app-order-summary></app-order-summary>
   <div class="maker-oder-buttons" >
-    <app-button
-    text = "Confirmar">
-    </app-button>
-    <app-button
-      text = "Cancelar"
-    ></app-button>
+    <app-button text = "Confirmar"></app-button>
+    <app-button text = "Cancelar"></app-button>
   </div>
 </main>

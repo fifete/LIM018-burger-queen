@@ -11,3 +11,12 @@ app-menu-item {
     display: flex;
     justify-content: center;
 }
+
+.options-button {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5em;
+  }
+  app-button-menu {
+    width: 40%;
+  }

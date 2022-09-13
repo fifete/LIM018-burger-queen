@@ -12,14 +12,13 @@ export class OrderSummaryComponent implements OnInit {
     
   }
   ngOnInit(): void {}
+  
   calcTotal() {
     if (!this.isArrayEmpty()) {
       if (Object.keys(this.filteredItems).length < 2) {
         const targetProduct:any = Object.values(this.filteredItems)[0]
         return targetProduct.quantity * targetProduct.price;
       } else {
-        // return this.filteredItems.reduce((a, b) => (a.quantity * a.price) + (b.quantity * b.price));
-        // const total = Object.values(this.filteredItems).reduce(({a}, {b}) => (a.quantity * a.price) + (b.quantity * b.price), 0)
         let total = 0
         for (const key in this.filteredItems) {
           console.log(this.filteredItems)
