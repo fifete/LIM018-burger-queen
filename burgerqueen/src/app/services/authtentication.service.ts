@@ -22,8 +22,10 @@ export class  AuthtenticationService {
           JSON.parse(localStorage.getItem('user')!);
           if(user.email === 'admin@gmail.com') {
             this.router.navigate(['register'])
-          } else {
+          } else if (user.email.includes('mesero')) {
             this.router.navigate(['order'])
+          } else if (user.email.includes('chef')) {
+            this.router.navigate(['order-for-cook'])
           }
         }
       })

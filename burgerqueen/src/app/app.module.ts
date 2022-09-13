@@ -31,6 +31,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { SummaryItemComponent } from './components/summary-item/summary-item.component';
 import { registerLocaleData } from '@angular/common';
+import { OrderForCookComponent } from './components/order-for-cook/order-for-cook.component';
+import { OrderCookedComponent } from './components/order-cooked/order-cooked.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -67,7 +69,9 @@ registerLocaleData(localePy, 'es')
     ButtonComponent,
     ButtonMenuComponent,
     RegisterFormComponent,
-    SummaryItemComponent
+    SummaryItemComponent,
+    OrderForCookComponent,
+    OrderCookedComponent
   ],
   providers: [
     AuthtenticationService,

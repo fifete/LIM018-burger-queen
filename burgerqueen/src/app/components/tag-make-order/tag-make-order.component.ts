@@ -6,19 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tag-make-order.component.css']
 })
 export class TagMakeOrderComponent implements OnInit {
+  navbarTabs = [ {textS: "RP", text: "Realizar pedido", link: "/order"}, {textS: "PE", text: "Pedido por entregar", link: "/deliver"} ]
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  showBreakfast() {
-    console.log('mostrando menu')
-  }
-
-  showLunch() {
-    console.log('mostrando lunch')
-  }
-
+  
   // Get the current date and time as a date-time value.
   today: number = Date.now();
 }
