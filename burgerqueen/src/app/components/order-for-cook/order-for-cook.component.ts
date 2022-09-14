@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
-
+/* import { MenuItemServiceTs } from 'src/app/services/menu-item.service';*/
 @Component({
   selector: 'app-order-for-cook',
   templateUrl: './order-for-cook.component.html',
@@ -8,56 +8,37 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class OrderForCookComponent implements OnInit {
   navbarTabs = [ {textS: "PN", text: "Pedidos nuevos", link: "/order-for-cook"}, {textS: "PP", text: "Pedido preparados", link: "/order-cooked"} ]
-  orderInfo:any = []
-  orderItems:any = [];
-  // orderA:any =[]
+  orderItems:any =[]
 
-  constructor( public firestore: FirestoreService ) { }
+  constructor( 
+    //public menuItemService: MenuItemServiceTs,
+    public firestore : FirestoreService
+    ) { }
+  
 
-  ngOnInit(): void {
-    // this.listOrdes()
+  ngOnInit(): void { this.listOrdes('creado')}
+  
+  listOrdes(state:string) {
+    this.firestore.getOrdersByState(state).subscribe( doc => {
+        this.orderItems = [];
+        doc.forEach(document => {
+          let docData = document.payload.doc.data();
+          this.orderItems.push({
+            id: document.payload.doc.id,
+            state: docData['state'],
+            client: docData['client'],
+            mesa: docData['mesa'],
+            hour: docData['hour'],
+            total: docData['totalPrice'],
+            items: [...Object.values(docData['items'])]
+          })
+        });
+      })
   }
 
-  listOrdes() {
-    this.firestore.getOrders().subscribe( doc => {
-      // this.orderItems = [];
-      doc.forEach(document => {
-        let docData = document.payload.doc.data()
-        this.orderItems.push(...Object.values(docData['items']))
-
-        this.orderInfo.push(docData)
-        // this.orderItems.push(...this.showProducts(docData['items']));
-        /* this.orderA.push({
-          client: document.payload.doc.data()['client'],
-          mesa: document.payload.doc.data()['mesa'],
-          hour: document.payload.doc.data()['hour'],
-          total: document.payload.doc.data()['totalPrice'],
-          ...document.payload.doc.data()['items']
-        }) */
-
-      });
-
-      // doc.forEach(document => {
-      //   let docData = document.payload.doc.data()
-      //   this.orderItems.push(...Object.values(docData['items']))
-      //   // this.orderItems.push(...this.showProducts(docData['items']));
-      //   /* this.orderA.push({
-      //     client: document.payload.doc.data()['client'],
-      //     mesa: document.payload.doc.data()['mesa'],
-      //     hour: document.payload.doc.data()['hour'],
-      //     total: document.payload.doc.data()['totalPrice'],
-      //     ...document.payload.doc.data()['items']
-      //   }) */
-
-      // });
-      // console.log(this.orderA)
-    })
+  changeStateToCooking(id:string) {
+    this.firestore.updateOrder(id,{ state: 'preparando'})
+    .then(() => console.log('estado cambiado') )
   }
-
-  // showProducts(data:any){
-  //   return Object.values(data)
-  // }
-
-
 
 }
