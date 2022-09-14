@@ -33,6 +33,7 @@ import { SummaryItemComponent } from './components/summary-item/summary-item.com
 import { registerLocaleData } from '@angular/common';
 import { OrderForCookComponent } from './components/order-for-cook/order-for-cook.component';
 import { OrderCookedComponent } from './components/order-cooked/order-cooked.component';
+import { TableNewOrderComponent } from './components/table-new-order/table-new-order.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -71,7 +72,8 @@ registerLocaleData(localePy, 'es')
     RegisterFormComponent,
     SummaryItemComponent,
     OrderForCookComponent,
-    OrderCookedComponent
+    OrderCookedComponent,
+    TableNewOrderComponent
   ],
   providers: [
     AuthtenticationService,
