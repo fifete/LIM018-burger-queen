@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { User } from './user';
 
 @Injectable({
@@ -28,5 +28,9 @@ export class FirestoreService {
   
   getOrders() {
    return this.firestore.collection('orders', ref => ref.orderBy('hour', 'asc')).snapshotChanges()
+  }
+
+  updateOrder(id:string, state:any) {
+    return  this.productsRef.doc(id).update(state)
   }
 }

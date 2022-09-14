@@ -51,7 +51,8 @@ export class OrderSummaryComponent implements OnInit {
       mesa,
       hour,
       totalPrice: this.calcTotal(),
-      items: this.filteredItems
+      items: this.filteredItems,
+      state: 'creado'
     }
     this.firestore.addMenuOrder(orderData)
     .then(() => console.log('data agregada'))

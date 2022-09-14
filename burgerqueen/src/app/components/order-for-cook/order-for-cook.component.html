@@ -1,6 +1,6 @@
 <app-navbar [navbarTabs] = "navbarTabs"></app-navbar>
-<section>
-    <table *ngFor = "let order of orderItems">
+<section *ngFor = "let order of orderItems">
+    <table>
         <thead>
             <tr>
                 <th>
@@ -30,4 +30,5 @@
             </tr>
         </tfoot>
     </table>
+    <button (click)="changeStateToCooked(order.id)">Preparando</button>
 </section>
