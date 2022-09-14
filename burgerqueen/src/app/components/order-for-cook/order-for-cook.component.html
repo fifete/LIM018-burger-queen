@@ -1,7 +1,6 @@
 <app-navbar [navbarTabs] = "navbarTabs"></app-navbar>
 <section>
-    <button (click)="listOrdes()" >Click</button>
-    <table *ngFor = "let order of orderA">
+    <table *ngFor = "let order of orderItems">
         <thead>
             <tr>
                 <th>
@@ -17,22 +16,17 @@
                 <th>Camtidad</th>
                 <th>Precio</th>
             </tr>
-            <tr>
-                <td>{{order.items.name}}</td>
-                <td>{{order.items.quantity}}</td>
-                <td>{{order.items.price}}</td>
-            </tr>
-            <!-- <tr *ngFor="let item of orderItems" >
+            <tr *ngFor="let item of order.items" >
                 <td>{{item.name}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.price}}</td>
-            </tr> -->
+            </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td>Total</td>
                 <td></td>
-                <td>{{order.totalPrice}}</td>
+                <td>{{order.total}}</td>
             </tr>
         </tfoot>
     </table>

@@ -8,42 +8,26 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class OrderForCookComponent implements OnInit {
   navbarTabs = [ {textS: "PN", text: "Pedidos nuevos", link: "/order-for-cook"}, {textS: "PP", text: "Pedido preparados", link: "/order-cooked"} ]
-  orderInfo:any = []
-  orderItems:any
-  orderA:any =[]
+  orderItems:any =[]
 
   constructor( public firestore: FirestoreService ) { }
 
-  ngOnInit(): void {
-/*     this.listOrdes()
- */  }
+  ngOnInit(): void { this.listOrdes()  }
 
   listOrdes() {
     this.firestore.getOrders().subscribe( doc => {
       this.orderItems = [];
       doc.forEach(document => {
         let docData = document.payload.doc.data()
-        this.orderInfo.push(docData)
-        this.orderItems.push(...this.showProducts(docData['items']));
-        /* this.orderA.push({
+        this.orderItems.push({
           client: document.payload.doc.data()['client'],
           mesa: document.payload.doc.data()['mesa'],
           hour: document.payload.doc.data()['hour'],
           total: document.payload.doc.data()['totalPrice'],
-          ...document.payload.doc.data()['items']
-        }) */
-       
-        
+          items: [...Object.values(document.payload.doc.data()['items'])]
+        })
       });
-      console.log(this.orderA)
-      console.log(this.orderInfo)
     })
   }
-
-  showProducts(data:any){
-    return Object.values(data)
-  }
-
-
 
 }
