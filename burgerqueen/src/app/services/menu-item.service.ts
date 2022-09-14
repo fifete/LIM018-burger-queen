@@ -17,6 +17,17 @@ export class MenuItemServiceTs {
     for (let items in this.filteredItems ) delete this.filteredItems[items];
   }
 
+  saveOrder(docData:any) {
+    return {
+      state: docData['state'],
+      client: docData['client'],
+      mesa: docData['mesa'],
+      hour: docData['hour'],
+      total: docData['totalPrice'],
+      items: [...Object.values(docData['items'])]
+    }
+  }
+
 /*   listOrdes(state:string) {
     this.firestore.getOrdersByState(state).pipe(
       take(1)

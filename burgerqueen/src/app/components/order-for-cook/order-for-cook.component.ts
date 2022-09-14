@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
-/* import { MenuItemServiceTs } from 'src/app/services/menu-item.service';*/
+import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 @Component({
   selector: 'app-order-for-cook',
   templateUrl: './order-for-cook.component.html',
@@ -11,7 +11,7 @@ export class OrderForCookComponent implements OnInit {
   orderItems:any =[]
 
   constructor( 
-    //public menuItemService: MenuItemServiceTs,
+    public menuItemService: MenuItemServiceTs,
     public firestore : FirestoreService
     ) { }
   
@@ -25,12 +25,7 @@ export class OrderForCookComponent implements OnInit {
           let docData = document.payload.doc.data();
           this.orderItems.push({
             id: document.payload.doc.id,
-            state: docData['state'],
-            client: docData['client'],
-            mesa: docData['mesa'],
-            hour: docData['hour'],
-            total: docData['totalPrice'],
-            items: [...Object.values(docData['items'])]
+            ...this.menuItemService.saveOrder(docData)
           })
         });
       })

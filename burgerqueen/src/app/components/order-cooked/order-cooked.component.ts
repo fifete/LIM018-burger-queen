@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
-/* import { MenuItemServiceTs } from 'src/app/services/menu-item.service'; */
+import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 
 @Component({
   selector: 'app-order-cooked',
@@ -13,7 +13,7 @@ export class OrderCookedComponent implements OnInit {
 
   constructor(
     public firestore: FirestoreService,
-    //public menuItemService: MenuItemServiceTs,
+    public menuItemService: MenuItemServiceTs,
   ) { }
 
   ngOnInit(): void { this.listOrdes('preparando')  }
@@ -25,14 +25,10 @@ export class OrderCookedComponent implements OnInit {
           let docData = document.payload.doc.data();
           this.orderItems.push({
             id: document.payload.doc.id,
-            state: docData['state'],
-            client: docData['client'],
-            mesa: docData['mesa'],
-            hour: docData['hour'],
-            total: docData['totalPrice'],
-            items: [...Object.values(docData['items'])]
+            ...this.menuItemService.saveOrder(docData)
           })
         });
+        console.log(this.orderItems)
       })
   }
 
