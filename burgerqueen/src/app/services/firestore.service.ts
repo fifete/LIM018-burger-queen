@@ -18,12 +18,15 @@ export class FirestoreService {
      });
    }
  
-   getUserByUid(uid:string){
+  getUserByUid(uid:string){
     return this.firestore.collection('users').doc(uid).valueChanges()
    }
 
-   addMenuOrder(order:{}) {
-   return this.productsRef.add(order)
-   }
-   
+  addMenuOrder(order:{}) {
+  return this.productsRef.add(order)
+  }
+  
+  getOrders() {
+   return this.firestore.collection('orders', ref => ref.orderBy('hour', 'asc')).snapshotChanges()
+  }
 }

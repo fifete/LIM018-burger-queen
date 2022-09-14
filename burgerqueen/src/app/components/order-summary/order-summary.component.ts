@@ -43,14 +43,15 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   sendOrder(client:string,mesa:string){
-    this.filteredItems.totalPrice = this.calcTotal()
+    /* this.filteredItems.totalPrice = this.calcTotal() */
     let date = new Date();
     let hour = date.getHours() + ' : ' +  date.getMinutes()
     let orderData = {
       client,
       mesa,
       hour,
-      ...this.filteredItems
+      totalPrice: this.calcTotal(),
+      items: this.filteredItems
     }
     this.firestore.addMenuOrder(orderData)
     .then(() => console.log('data agregada'))

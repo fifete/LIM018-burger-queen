@@ -14,6 +14,5 @@ export class MenuItemServiceTs {
   clearOrder() {
     for (let items in this.filteredItems ) delete this.filteredItems[items];
   }
-
   
 }
