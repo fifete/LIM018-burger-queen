@@ -9,6 +9,8 @@ import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 export class OrderForCookComponent implements OnInit {
   navbarTabs = [ {textS: "PN", text: "Pedidos nuevos", link: "/order-for-cook"}, {textS: "PP", text: "Pedido preparados", link: "/order-cooked"} ]
   orderItems:any =[]
+  state = "preparando"
+  buttonAction = "Preparando"
 
   constructor( 
     public menuItemService: MenuItemServiceTs,
@@ -29,11 +31,6 @@ export class OrderForCookComponent implements OnInit {
           })
         });
       })
-  }
-
-  changeStateToCooking(id:string) {
-    this.firestore.updateOrder(id,{ state: 'preparando'})
-    .then(() => console.log('estado cambiado') )
   }
 
 }

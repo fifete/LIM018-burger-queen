@@ -1,6 +1,9 @@
+<app-navbar [navbarTabs] = "navbarTabs" ></app-navbar>
 <main>
-    <app-navbar></app-navbar>
     <h2>Pedidos por entregar</h2>
-    <app-order-table></app-order-table>
-    <button>Entregado</button>
+    <app-order-table 
+        [orderItems] = "orderItems"
+        [state] = "state"
+        [buttonAction] = "buttonAction"
+    ></app-order-table>
 </main>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-order-table',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-table.component.css']
 })
 export class OrderTableComponent implements OnInit {
-
-  constructor() { }
+  @Input() orderItems
+  @Input() state:string
+  @Input() buttonAction
+  
+  constructor( 
+    public firestore:FirestoreService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  changeState(id:string, state:string) {
+    this.firestore.updateOrder(id,{ state: state})
+    .then(() => console.log('estado cambiado') )
   }
 
 }

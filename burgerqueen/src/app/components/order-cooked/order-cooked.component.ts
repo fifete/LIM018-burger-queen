@@ -10,6 +10,8 @@ import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 export class OrderCookedComponent implements OnInit {
   navbarTabs = [ {textS: "PN", text: "Pedidos nuevos", link: "/order-for-cook"}, {textS: "PP", text: "Pedido preparados", link: "/order-cooked"} ]
   orderItems:any =[]
+  state = "entregado"
+  buttonAction = "Preparado"
 
   constructor(
     public firestore: FirestoreService,
@@ -31,10 +33,4 @@ export class OrderCookedComponent implements OnInit {
         console.log(this.orderItems)
       })
   }
-
-  changeStateToCooked(id:string) {
-    this.firestore.updateOrder(id,{ state: 'entregado'})
-    .then(() => console.log('estado cambiado') )
-  }
-
 }
