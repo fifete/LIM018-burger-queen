@@ -20,6 +20,7 @@ export class OrderForCookComponent implements OnInit {
   
   listOrdes(state:string) {
     this.firestore.getOrdersByState(state).subscribe( doc => {
+        this.orderItems = [];
         doc.forEach(document => {
           let docData = document.payload.doc.data();
           this.orderItems.push({
