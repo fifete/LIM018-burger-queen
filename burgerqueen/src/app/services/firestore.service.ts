@@ -26,8 +26,12 @@ export class FirestoreService {
   return this.productsRef.add(order)
   }
   
-  getOrders() {
+  /* getOrders() {
    return this.firestore.collection('orders', ref => ref.orderBy('hour', 'asc')).snapshotChanges()
+  } */
+
+  getOrdersByState(state:string) {
+    return this.firestore.collection('orders', ref => ref.where('state', '==', state).orderBy('hour', 'asc')).snapshotChanges()
   }
 
   updateOrder(id:string, state:any) {
