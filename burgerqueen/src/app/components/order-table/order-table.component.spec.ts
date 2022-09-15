@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { OrderTableComponent } from './order-table.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { firebaseConfig } from '../../app.module';
 
 describe('OrderTableComponent', () => {
   let component: OrderTableComponent;
@@ -8,7 +9,8 @@ describe('OrderTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderTableComponent ]
+      declarations: [ OrderTableComponent ],
+      providers: [ {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig}]
     })
     .compileComponents();
 

@@ -20,12 +20,13 @@ import { ButtonComponent } from './components/button/button.component';
 import { ButtonMenuComponent } from './components/button-menu/button-menu.component';
 
 // 1. Import the libs you need
-import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireModule,  FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AuthtenticationService } from './services/authtentication.service';
+import { FirestoreService } from './services/firestore.service';
 import { MenuItemServiceTs } from './services/menu-item.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
@@ -34,7 +35,7 @@ import { registerLocaleData } from '@angular/common';
 import { OrderForCookComponent } from './components/order-for-cook/order-for-cook.component';
 import { OrderCookedComponent } from './components/order-cooked/order-cooked.component';
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
   authDomain: "burgerqueenproject.firebaseapp.com",
   projectId: "burgerqueenproject",
@@ -51,8 +52,8 @@ registerLocaleData(localePy, 'es')
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule, 
-    FontAwesomeModule, // storage
+    AngularFireStorageModule, // storage 
+    FontAwesomeModule,
     FormsModule
   ],
   declarations: [
@@ -76,6 +77,7 @@ registerLocaleData(localePy, 'es')
   providers: [
     AuthtenticationService,
     MenuItemServiceTs,
+    FirestoreService,
     { provide: LOCALE_ID, useValue: 'es'}
   ],
   bootstrap: [AppComponent]
