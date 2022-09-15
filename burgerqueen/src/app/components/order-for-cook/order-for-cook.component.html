@@ -1,34 +1,6 @@
 <app-navbar [navbarTabs] = "navbarTabs"></app-navbar>
-<section *ngFor = "let order of orderItems">
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    <p>Cliente:{{order.client}}</p>
-                    <p>Entrada:{{order.hour}}</p>
-                </th>
-                <th>Mesa:{{order.mesa}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Pedido</th>
-                <th>Camtidad</th>
-                <th>Precio</th>
-            </tr>
-            <tr *ngFor="let item of order.items" >
-                <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-                <td>{{item.price}}</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Total</td>
-                <td></td>
-                <td>{{order.total}}</td>
-            </tr>
-        </tfoot>
-    </table>
-    <button (click)="changeStateToCooking(order.id)">Preparando</button>
-</section>
+<app-order-table
+    [orderItems] = "orderItems"
+    [state] = "state"
+    [buttonAction] = "buttonAction"
+></app-order-table>

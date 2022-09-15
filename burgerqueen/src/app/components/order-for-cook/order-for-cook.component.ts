@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
-/* import { MenuItemServiceTs } from 'src/app/services/menu-item.service';*/
+import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 @Component({
   selector: 'app-order-for-cook',
   templateUrl: './order-for-cook.component.html',
@@ -9,9 +9,11 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class OrderForCookComponent implements OnInit {
   navbarTabs = [ {textS: "PN", text: "Pedidos nuevos", link: "/order-for-cook"}, {textS: "PP", text: "Pedido preparados", link: "/order-cooked"} ]
   orderItems:any =[]
+  state = "preparando"
+  buttonAction = "Preparando"
 
   constructor( 
-    //public menuItemService: MenuItemServiceTs,
+    public menuItemService: MenuItemServiceTs,
     public firestore : FirestoreService
     ) { }
   
@@ -25,20 +27,10 @@ export class OrderForCookComponent implements OnInit {
           let docData = document.payload.doc.data();
           this.orderItems.push({
             id: document.payload.doc.id,
-            state: docData['state'],
-            client: docData['client'],
-            mesa: docData['mesa'],
-            hour: docData['hour'],
-            total: docData['totalPrice'],
-            items: [...Object.values(docData['items'])]
+            ...this.menuItemService.saveOrder(docData)
           })
         });
       })
-  }
-
-  changeStateToCooking(id:string) {
-    this.firestore.updateOrder(id,{ state: 'preparando'})
-    .then(() => console.log('estado cambiado') )
   }
 
 }
