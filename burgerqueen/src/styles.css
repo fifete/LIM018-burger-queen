@@ -96,7 +96,7 @@ app-login {
   align-items: center;
 }
 
-app-tag-make-order, app-register-form{
+app-tag-make-order, app-register-form, app-tag-order-delivered {
   display: inline-block;
   height: 100%;
   width: 100%;

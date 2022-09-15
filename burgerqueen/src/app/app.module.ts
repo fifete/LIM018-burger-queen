@@ -72,7 +72,7 @@ registerLocaleData(localePy, 'es')
     RegisterFormComponent,
     SummaryItemComponent,
     OrderForCookComponent,
-    OrderCookedComponent
+    OrderCookedComponent,
   ],
   providers: [
     AuthtenticationService,

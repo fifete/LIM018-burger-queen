@@ -1,34 +1,34 @@
-<section *ngFor = "let order of orderItems">
-    <table>
+<section *ngFor = "let order of orderItems" class="table-container">
+    <table class="order-table flex">
         <thead>
-            <tr>
-                <th>
-                    <p>Cliente:{{order.client}}</p>
-                    <p>Entrada:{{order.hour}}</p>
+            <tr class="order-table-1stRow">
+                <th class="row1-col1">
+                    <p>Cliente: <span>{{order.client}}</span></p>
+                    <p>Entrada: <span>{{order.hour}} hrs</span></p>
                 </th>
-                <th>Mesa:{{order.mesa}}</th>
+                <th class="row1-col2">Mesa: <span>{{order.mesa}}</span></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="order-table-body">
             <tr>
                 <th>Pedido</th>
-                <th>Camtidad</th>
+                <th>Cantidad</th>
                 <th>Precio</th>
             </tr>
             <tr *ngFor="let item of order.items" >
                 <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-                <td>{{item.price}}</td>
+                <td class="mg-left-q">{{item.quantity}} unid</td>
+                <td class="mg-left-p">{{item.price}}</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td>Total</td>
                 <td></td>
-                <td>{{order.total}}</td>
+                <td class="mg-left-q">$ {{order.total}}</td>
             </tr>
         </tfoot>
     </table>
-    <button  (click)="changeState(order.id, state)">{{buttonAction}}</button>
+    <button (click)="changeState(order.id, state)" class="deliver-btn">{{buttonAction}}</button>
 </section>
 

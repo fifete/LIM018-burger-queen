@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       { this.text = 'Ingrese una contraseña correcta' }
       else if(err.message == 'Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found).')
       { this.text = 'Ingrese un correo valido' }
-      else this.text = 'Verifique su correo o contraseña'
+      else this.text = 'Ingrese un correo o contraseña válidos'
     })
   }
 

@@ -1,0 +1,72 @@
+.flex {
+  display: flex;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+
+.order-table {
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 100%;
+
+  background-color: white;
+  padding: 20px 15px;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  font-family: 'Rubik';
+  color: #104E5B;
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.order-table tr {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr 1fr; 
+}
+
+.deliver-btn {
+  width: 100%;
+  background: #4A8F32;
+  border-radius: .5em;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  padding: .3em;
+}
+
+.order-table-1stRow {
+  border-bottom: 1px dotted #104e5b;
+  padding-bottom: .5rem;
+}
+
+.order-table-1stRow span {
+  font-weight: normal;
+  font-size: 15px;
+  padding: 0 .5em;
+}
+
+.row1-col2 {
+  grid-column-start: 3;
+  align-self: center;
+}
+
+.order-table-body {
+  width: 100%;
+  display: inline-block;
+}
+
+.mg-left-q {
+  margin-left: 1.5ch;
+}
+
+.mg-left-p {
+ margin-left: 2ch;
+}
