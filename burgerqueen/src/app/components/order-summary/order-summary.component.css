@@ -8,9 +8,21 @@
 
 .order-summary-inputs {
   display: flex;
-  /* gap: 150px; */
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.order-summary-input input {
+  border: 1px solid #bebebe;
+  border-radius: .5em;
+  padding: .2em .5em;
+}
+
+.order-summary-input label {
+  display: block;
+  padding: .3em 0;
+  font-weight: 500;
 }
 
 .order-table {
