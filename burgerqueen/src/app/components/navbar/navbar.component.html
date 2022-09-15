@@ -19,9 +19,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href=""  class="nav-link">
+            <a class="nav-link"  (click)="authService.SignOut()">
                 <fa-icon [icon]="logout" ></fa-icon>
-                <span class="link-text" (click)="authService.SignOut()">Cerrar sesion</span>
+                <span class="link-text">Cerrar sesion</span>
             </a>
         </li>
     </ul>
