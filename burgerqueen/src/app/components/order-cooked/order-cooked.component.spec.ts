@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { OrderCookedComponent } from './order-cooked.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { firebaseConfig } from '../../app.module';
 
 describe('OrderCookedComponent', () => {
   let component: OrderCookedComponent;
@@ -8,7 +9,8 @@ describe('OrderCookedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderCookedComponent ]
+      declarations: [ OrderCookedComponent ],
+      providers: [ {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig}]
     })
     .compileComponents();
 

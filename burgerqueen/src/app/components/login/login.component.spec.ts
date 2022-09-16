@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginComponent } from './login.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { firebaseConfig } from '../../app.module';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -8,7 +9,8 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      providers: [ {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig}]
     })
     .compileComponents();
 
