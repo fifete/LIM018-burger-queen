@@ -78,7 +78,8 @@ registerLocaleData(localePy, 'es')
     AuthtenticationService,
     MenuItemServiceTs,
     FirestoreService,
-    { provide: LOCALE_ID, useValue: 'es'}
+    { provide: LOCALE_ID, useValue: 'es'},
+    // { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
   ],
   bootstrap: [AppComponent]
 })
