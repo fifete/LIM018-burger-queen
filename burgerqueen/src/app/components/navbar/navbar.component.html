@@ -12,7 +12,7 @@
                 <span class="link-text">{{username}}-{{role}}</span>
             </span>
         </li>
-        <li class="nav-item nav-tab"  *ngFor = "let navTab  of navbarTabs" >
+        <li class="nav-item nav-tab" id="tab"  *ngFor = "let navTab  of navbarTabs" >
             <a routerLink={{navTab.link}}  class="nav-link">
                 <span class="nav-text-icon">{{navTab.textS}}</span>
                 <span class="link-text">{{navTab.text}}</span>
