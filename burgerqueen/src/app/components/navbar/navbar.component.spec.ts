@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { AuthtenticationService } from 'src/app/services/authtentication.service';
@@ -14,6 +14,8 @@ describe('NavbarComponent', () => {
   let authService
   let firestoreServiceStub: Partial<any>
   let authServiceStub: Partial<any>
+  let expectedNavBarTabs
+  // let tabsTitleArr = []
 
   beforeEach( async () => {
     //mocking services
@@ -25,6 +27,7 @@ describe('NavbarComponent', () => {
         })
       }
     }
+
     authServiceStub = {
       userData: {uid: '1'}
     }
@@ -43,39 +46,43 @@ describe('NavbarComponent', () => {
     component = fixture.componentInstance;
     firestoreService = TestBed.inject(FirestoreService)
     authService = TestBed.inject(AuthtenticationService)
+
+    // Fake input for instance .nav-tab elements
+    expectedNavBarTabs = [ 
+      {textS: "RP", text: "Realizar pedido", link: "/order"},
+      {textS: "PE", text: "Pedido por entregar", link: "/deliver"}
+    ]
+    component.navbarTabs = expectedNavBarTabs
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  // Este segundo test no funciona pero el tercero q es parecido si funciona
-  it('should display the correct tabs name', () => {
-    const expectedNavBarTabs = [ {textS: "RP", text: "Realizar pedido", link: "/order"}]
+  it('should create the right .nav-tab instances', () => {
     fixture.detectChanges();
-    component.navbarTabs = expectedNavBarTabs
-    const hostElement: HTMLElement = fixture.nativeElement;
+    const heroTest = fixture.nativeElement.querySelectorAll('.nav-tab')
+    expect(heroTest.length).toBe(2)
+  });
 
-    // const anchorTabEl = fixture.nativeElement.querySelector('.nav-tab .link-text')
-    const heroDe: HTMLElement = hostElement.querySelector('.nav-tab .link-text');
-    // const heroEl = heroDe.nativeElement;
-    console.log(heroDe);
+  it('should display the correct tabs name', () => {
+    let tabsTitleArr = []
+    fixture.detectChanges();
+    const tabsTitle = fixture.nativeElement.querySelectorAll('.nav-tab .link-text')
     
-    expect(heroDe.textContent).toContain(expectedNavBarTabs[0].text)
+    for(let title of tabsTitle) {
+      tabsTitleArr.push(title.innerText);
+    }
+
+    fixture.detectChanges();
+    expect(tabsTitleArr).toEqual(["Realizar pedido", "Pedido por entregar"])
   });
 
   it('should show username and role from user db', () => {
     const userDataEl: HTMLElement = fixture.nativeElement.querySelector('.nav-item .link-text')
     fixture.detectChanges();
-    const content = userDataEl.textContent;
-    expect(content)
+    expect(userDataEl.textContent)
       .withContext('"User data is: "')
       .toContain(`${component.username}-${component.role}`);
   });
-
-
-  /* async SignOut() {
-    await this.auth.signOut()
-    await this.router.navigate(['login']);
-  } */
 });
