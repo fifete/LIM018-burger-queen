@@ -16,15 +16,20 @@ export class LoginComponent implements OnInit {
   }
 
   signInMessageError(email:string, password:string) {
+    // console.log('entre');
+    
     this.authService.SignIn(email, password)
     .then(() => {})
     .catch(err => {
+    // console.log('entre2');
+
       if(err.message == 'Firebase: The password is invalid or the user does not have a password. (auth/wrong-password).')
       { this.text = 'Ingrese una contraseña correcta' }
       else if(err.message == 'Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found).')
       { this.text = 'Ingrese un correo valido' }
       else this.text = 'Ingrese un correo o contraseña válidos'
     })
+    // console.log('entre3');
   }
 
 }

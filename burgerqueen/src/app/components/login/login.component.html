@@ -8,8 +8,6 @@
     <form>
         <input type="email" placeholder="Email" #userName required>
         <input type="password" placeholder="Contraseña" #userPassword required>
-        <!-- <button type="button" (click)="authService.SignIn(userName.value, userPassword.value)" >Iniciar sesión</button> -->
         <button type="button" (click)="signInMessageError(userName.value, userPassword.value)" >Iniciar sesión</button>
-        <!-- <button type="button" (click)="signin()" >Iniciar sesión</button> -->
     </form>
 </main>
