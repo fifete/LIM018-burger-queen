@@ -41,7 +41,7 @@ form button {
   margin-top: 11px;
   width: 522px;
   height: 55px;
-  background: #FFE7CA;
+  background: #FDC27A;
   border-radius: 14px;
 
   font-style: normal;
@@ -54,16 +54,17 @@ form button {
   cursor: pointer;
 }
 
-input {
-  width: 522px;
-  height: 60px;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #CCCCCC ;
+form button:hover {
+  opacity: .8;
+}
 
+.input {
+  border: 1px solid #bebebe;
+  border-radius: .5em;
+  padding: .5em .5em;
   color: #454F59;
 }
-input, input::placeholder {
+.input, .input::placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

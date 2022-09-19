@@ -107,6 +107,8 @@ app-order-for-cook {
   padding: 0;
 }
 
+app-order-for-cook { background-color: #F2F6F7;}
+
 app-root {
   height: 100vh;
   width: 100%;

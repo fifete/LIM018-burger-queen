@@ -6,8 +6,8 @@
       <p class="login-error-txt">{{text}}</p>
     </div>
     <form>
-        <input type="email" placeholder="Email" #userName required>
-        <input type="password" placeholder="Contraseña" #userPassword required>
+        <input class="input" type="email" placeholder="Email" #userName required>
+        <input class="input" type="password" placeholder="Contraseña" #userPassword required>
         <button type="button" (click)="signInMessageError(userName.value, userPassword.value)" >Iniciar sesión</button>
     </form>
 </main>
