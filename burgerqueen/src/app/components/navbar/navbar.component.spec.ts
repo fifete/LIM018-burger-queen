@@ -1,11 +1,8 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed} from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { AuthtenticationService } from 'src/app/services/authtentication.service';
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { firebaseConfig } from '../../app.module';
 import { of } from 'rxjs';
-import { By } from '@angular/platform-browser';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -15,7 +12,6 @@ describe('NavbarComponent', () => {
   let firestoreServiceStub: Partial<any>
   let authServiceStub: Partial<any>
   let expectedNavBarTabs
-  // let tabsTitleArr = []
 
   beforeEach( async () => {
     //mocking services
@@ -37,7 +33,6 @@ describe('NavbarComponent', () => {
       providers: [
        {provide:  FirestoreService, useValue: firestoreServiceStub },
        {provide:  AuthtenticationService, useValue: authServiceStub },
-        // {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig}
       ],
     })
     .compileComponents();

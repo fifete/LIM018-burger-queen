@@ -70,7 +70,7 @@
   transition: 600ms;
 }
 
-.nav-tab:hover {
+.nav-tab:hover, .nav-item:last-child:hover {
   filter: grayscale(0%) opacity(1);
   background: #FFE7CA;
   color: purple;

@@ -83,11 +83,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #FDC27A;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #FFE7CA;
 }
 
 app-login {
@@ -96,7 +96,10 @@ app-login {
   align-items: center;
 }
 
-app-tag-make-order, app-register-form, app-tag-order-delivered {
+app-tag-make-order,
+app-register-form,
+app-tag-order-delivered,
+app-order-for-cook {
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -105,11 +108,10 @@ app-tag-make-order, app-register-form, app-tag-order-delivered {
 }
 
 app-root {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: inline-block;
 }
-
 
 app-navbar {
   transition: width 600ms ease;

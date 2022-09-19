@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { MenuItemServiceTs } from 'src/app/services/menu-item.service';
 import { Item } from 'src/assets/menu';
 @Component({
@@ -8,7 +8,6 @@ import { Item } from 'src/assets/menu';
 })
 export class MenuItemComponent {
   @Input() item!: Item;
-  @ViewChild("additem") additem: ElementRef;
 
   /* ---- Change file name ----- */
   constructor(public menuItemService : MenuItemServiceTs) {}

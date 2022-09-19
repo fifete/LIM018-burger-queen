@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { FirestoreService } from './firestore.service';
-
 @Injectable({
   providedIn: 'root'
 })
 export class MenuItemServiceTs {
   filteredItems = {}
   orderItems:any = []
-  constructor( public firestore : FirestoreService ) { }
+  constructor() { }
 
   addItemToSummaryTable(item:any) {
     this.filteredItems[item.id] = item
