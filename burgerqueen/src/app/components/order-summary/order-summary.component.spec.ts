@@ -10,6 +10,7 @@ describe('OrderSummaryComponent', () => {
   let fixture: ComponentFixture<OrderSummaryComponent>;
   let sendOrderSpy
   let confirmOrderBtn
+  let cancelOrderBtn
   let menuItemsDummie
   let menuItemService
 
@@ -28,6 +29,7 @@ describe('OrderSummaryComponent', () => {
     menuItemService = TestBed.inject(MenuItemServiceTs)
 
     confirmOrderBtn = fixture.debugElement.query(By.css('app-button'))                                    
+    cancelOrderBtn = fixture.debugElement.query(By.css('app-button:last-child'))                                    
     sendOrderSpy = spyOn(component, 'sendOrder')
     menuItemsDummie = { 
       JFD: {
@@ -85,7 +87,16 @@ describe('OrderSummaryComponent', () => {
   });
 
   it('should remove all keys from filteredItems', () => {
-    component.cancelOrder()
+    cancelOrderBtn.triggerEventHandler('click', null)
     expect(menuItemService.filteredItems).toEqual({});
+  });
+
+  it('should create the correct number of instances of app-summary-item component', () => {
+    const rowMenuItem = fixture.nativeElement.querySelectorAll('app-summary-item')
+    const menuItemsArr = []
+    for(let row of rowMenuItem){
+      menuItemsArr.push(row)
+    }
+    expect(menuItemsArr.length).toBe(3);
   });
 });
