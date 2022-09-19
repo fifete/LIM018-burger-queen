@@ -3,7 +3,7 @@ import { OrderSummaryComponent } from './order-summary.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { firebaseConfig } from '../../app.module';
 
-describe('OrderSummaryComponent', () => {
+xdescribe('OrderSummaryComponent', () => {
   let component: OrderSummaryComponent;
   let fixture: ComponentFixture<OrderSummaryComponent>;
 
@@ -22,4 +22,8 @@ describe('OrderSummaryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //sendOrder sea llamada una vez y con los arg q le pongamos
+  // issArryEmpty dev keys en base a un obj DUMMIE
+  // CalcTotal 
 });

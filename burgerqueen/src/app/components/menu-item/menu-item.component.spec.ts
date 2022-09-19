@@ -51,7 +51,7 @@ describe('MenuItemComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should work', () => {
+  it('should add the item to the filteredItems object', () => {
     addItemBtn.triggerEventHandler('click', null)
     fixture.detectChanges();
     expect(menuItemService.filteredItems).toEqual(menuItemToAdd);

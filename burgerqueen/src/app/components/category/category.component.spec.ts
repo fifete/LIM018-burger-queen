@@ -51,8 +51,6 @@ describe('CategoryComponent', () => {
     ]
 
     component.menu = expectedMenuITems
-
-    // component.items = [expectedMenuITems[0]]
   });
 
   it('should create', () => {
