@@ -99,7 +99,8 @@ app-login {
 app-tag-make-order,
 app-register-form,
 app-tag-order-delivered,
-app-order-for-cook {
+app-order-for-cook,
+app-order-cooked {
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -107,7 +108,10 @@ app-order-for-cook {
   padding: 0;
 }
 
-app-order-for-cook { background-color: #F2F6F7;}
+app-order-for-cook,
+app-order-cooked{ 
+  background-color: #F2F6F7;
+}
 
 app-root {
   height: 100vh;
