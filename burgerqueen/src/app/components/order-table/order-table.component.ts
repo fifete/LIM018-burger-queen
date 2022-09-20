@@ -20,7 +20,6 @@ export class OrderTableComponent implements OnInit {
 
   changeState(id:string, state:string) {
     this.firestore.updateOrder(id,{ state: state})
-    .then(() => console.log('estado cambiado') )
   }
 
 }

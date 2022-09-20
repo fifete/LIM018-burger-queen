@@ -10,7 +10,9 @@ describe('OrderTableComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ OrderTableComponent ],
-      providers: [ {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig}]
+      providers: [ 
+        {provide:  FIREBASE_OPTIONS, useValue: firebaseConfig},
+      ]
     })
     .compileComponents();
 
