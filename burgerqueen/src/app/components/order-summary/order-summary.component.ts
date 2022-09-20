@@ -45,7 +45,7 @@ export class OrderSummaryComponent implements OnInit {
   sendOrder(client:string,mesa:string){
     /* this.filteredItems.totalPrice = this.calcTotal() */
     let date = new Date();
-    let hour = date.getHours() + ' : ' +  date.getMinutes()
+    let hour = date.getHours() + ":" + date.getMinutes().toString().padStart(2, '0');
     let orderData = {
       client,
       mesa,

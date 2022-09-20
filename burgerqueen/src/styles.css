@@ -90,10 +90,13 @@ body::-webkit-scrollbar-thumb {
   background: #FFE7CA;
 }
 
+body { background-color: #F2F6F7;}
+
 app-login {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
 }
 
 app-tag-make-order,
@@ -108,10 +111,10 @@ app-order-cooked {
   padding: 0;
 }
 
-app-order-for-cook,
+/* app-order-for-cook,
 app-order-cooked{ 
   background-color: #F2F6F7;
-}
+} */
 
 app-root {
   height: 100vh;
@@ -130,4 +133,34 @@ app-navbar {
 
 app-navbar:hover {
   width: 16rem;
+}
+
+app-order-table > * + * {
+  margin-top: 2rem;
+}
+
+app-order-for-cook main,
+app-order-cooked main {
+  margin-left: 5rem;
+  padding: 0 2rem 1.5rem 2rem;
+}
+
+app-order-for-cook h2 {
+  text-align: center;
+  color: #1c5763;
+  padding-block: 1rem;
+}
+
+@media (min-width: 950px) {
+  app-order-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  app-order-table .table-container {
+    flex: 1 1 400px;
+    margin-top: 0;
+  }
 }
