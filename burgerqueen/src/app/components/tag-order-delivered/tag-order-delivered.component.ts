@@ -12,6 +12,7 @@ export class TagOrderDeliveredComponent implements OnInit {
   orderItems:any =[]
   state = "finalizado"
   buttonAction = "Entregado"
+  getOrderTotalTime= this.getOrderTime
 
   constructor(
     public firestore: FirestoreService,
@@ -33,4 +34,15 @@ export class TagOrderDeliveredComponent implements OnInit {
       })
   }
 
+/*   getFinalHour() {
+    let date = new Date();
+    let finalHour = date.getHours() + ":" + date.getMinutes().toString().padStart(2, '0');
+    return finalHour
+  } */
+
+  getOrderTime(id:string) {
+    let date = new Date();
+    let finalHour = date.getHours() + ":" + date.getMinutes().toString().padStart(2, '0');
+    this.firestore.updateOrder(id, { finalHour: finalHour})
+  }
 }

@@ -15,7 +15,10 @@ export class RegisterFormComponent implements OnInit {
   email:string;
   password:string;
 
-  navbarTabs = [ {textS: "RP", text: "Registro de personal", link: "/register"} ]
+  navbarTabs = [ 
+    {textS: "RP", text: "Registro de personal", link: "/register"},
+    {textS: "HP", text: "Historial de pedidos", link: "/history"}
+  ]
 
   constructor(
     public fireService: FirestoreService,

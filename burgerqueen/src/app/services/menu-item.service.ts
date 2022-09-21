@@ -20,7 +20,7 @@ export class MenuItemServiceTs {
       state: docData['state'],
       client: docData['client'],
       mesa: docData['mesa'],
-      hour: docData['hour'],
+      initialHour: docData['initialHour'],
       total: docData['totalPrice'],
       items: [...Object.values(docData['items'])]
     }

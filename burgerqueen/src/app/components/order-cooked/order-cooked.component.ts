@@ -16,7 +16,7 @@ export class OrderCookedComponent implements OnInit {
   constructor(
     public firestore: FirestoreService,
     public menuItemService: MenuItemServiceTs,
-  ) { }
+  ) { console.log('tas aquí') }
 
   ngOnInit(): void { this.listOrdes('preparando')  }
   
@@ -25,10 +25,13 @@ export class OrderCookedComponent implements OnInit {
         this.orderItems = [];
         doc.forEach(document => {
           let docData = document.payload.doc.data();
+        console.log(docData);
+        
           this.orderItems.push({
             id: document.payload.doc.id,
             ...this.menuItemService.saveOrder(docData)
           })
+          console.log(this.orderItems)
         });
         console.log(this.orderItems)
       })

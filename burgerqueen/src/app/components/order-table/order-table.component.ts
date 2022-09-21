@@ -10,6 +10,7 @@ export class OrderTableComponent implements OnInit {
   @Input() orderItems
   @Input() state:string
   @Input() buttonAction
+  @Input() getOrderTotalTime
   
   constructor( 
     public firestore:FirestoreService
@@ -21,5 +22,4 @@ export class OrderTableComponent implements OnInit {
   changeState(id:string, state:string) {
     this.firestore.updateOrder(id,{ state: state})
   }
-
 }

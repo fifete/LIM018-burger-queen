@@ -34,6 +34,7 @@ import { SummaryItemComponent } from './components/summary-item/summary-item.com
 import { registerLocaleData } from '@angular/common';
 import { OrderForCookComponent } from './components/order-for-cook/order-for-cook.component';
 import { OrderCookedComponent } from './components/order-cooked/order-cooked.component';
+import { OrdersHistoryComponent } from './components/orders-history/orders-history.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA26CQPFXl-j1Vc2BB98STFsr8qUvohU14",
@@ -73,6 +74,7 @@ registerLocaleData(localePy, 'es')
     SummaryItemComponent,
     OrderForCookComponent,
     OrderCookedComponent,
+    OrdersHistoryComponent,
   ],
   providers: [
     AuthtenticationService,

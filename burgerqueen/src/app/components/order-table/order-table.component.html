@@ -4,7 +4,7 @@
             <tr class="order-table-1stRow">
                 <th class="row1-col1">
                     <p>Cliente: <span>{{order.client}}</span></p>
-                    <p>Entrada: <span>{{order.hour}} hrs</span></p>
+                    <p>Entrada: <span>{{order.initialHour}} hrs</span></p>
                 </th>
                 <th class="row1-col2">Mesa: <span>{{order.mesa}}</span></th>
             </tr>
@@ -29,6 +29,8 @@
             </tr>
         </tfoot>
     </table>
-    <button (click)="changeState(order.id, state)" class="deliver-btn">{{buttonAction}}</button>
+    <button (click)="changeState(order.id, state); 
+        getOrderTotalTime(order.id)" class="deliver-btn">
+    {{buttonAction}}</button>
 </section>
 
