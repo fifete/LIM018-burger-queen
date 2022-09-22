@@ -18,8 +18,6 @@ export class  AuthtenticationService {
       this.auth.authState.subscribe((user) => {
         if(user){
           this.userData = user;
-          sessionStorage.setItem('user', JSON.stringify(this.userData));
-          JSON.parse(localStorage.getItem('user')!);
           if(user.email === 'admin@gmail.com') {
             this.router.navigate(['register'])
           } else if (user.email.includes('mesero')) {
