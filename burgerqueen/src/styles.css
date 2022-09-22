@@ -139,6 +139,14 @@ app-order-table > * + * {
   margin-top: 2rem;
 }
 
+table {
+  font-family: 'Rubik';
+  background-color: white;
+  color: #104E5B;
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
 app-order-for-cook main,
 app-order-cooked main {
   margin-left: 5rem;

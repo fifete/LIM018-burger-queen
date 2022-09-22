@@ -36,16 +36,17 @@ export class OrdersHistoryComponent implements OnInit {
         });
       })
   }
+  
   getTime(initial, final) {
-    let time;
-    let [h, m] = initial.split(':');
-    let [hF, mF] = final.split(':');
+    let time
+    const [h, m] = initial.split(':');
+    const [hF, mF] = final.split(':');
     const res = (hF*60 + parseInt(mF)) - (h*60 + parseInt(m))
-    if(res>60){
+    if (res > 60) {
       let hours = res/60;
       time = Math.floor(hours)
-      let minutes = res-(60*time)
-      time = Math.floor(hours).toString() + ':' + minutes + ' hrs'
+      let minutes = res - (60*time)
+      time = Math.floor(hours).toString() + ':' + minutes.toString().padStart(2, '0') + ' hrs'
     } else {
       time = res.toString() + ' min'
     }

@@ -50,3 +50,41 @@ export const orderItemsDummie = [
         total: 20,
     }
 ]
+
+// mock firestore
+/*     firestoreServiceStub = jasmine.createSpyObj('firestoreService', ['getOrdersByState', 'updateOrder'])
+    firestoreServiceStub.updateOrder */
+   /*  menuItemStub = {
+        saveOrder: function (data) {
+          return data
+        }
+      }
+  
+      firestoreServiceStub = {
+        updateOrder: function (id, { state: state}) {
+          component.orderItems[0].state = state
+        },
+        getOrdersByState: function (state) {
+          filteredItems = orderItemsDummie.filter(item=> item.state === state)
+          // component.orderItems = filteredItems
+  
+          return of([
+            {
+              payload: {
+                doc: {
+                  data: function() {return orderItemsDummie[0]},
+                  id: '1234'
+                }
+              }
+            },
+            {
+              payload: {
+                doc: {
+                  data: function() {return orderItemsDummie[0]},
+                  id: '123'
+                }
+              }
+            }
+          ])
+        }}
+   */

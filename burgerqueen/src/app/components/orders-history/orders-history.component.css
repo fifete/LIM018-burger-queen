@@ -1,0 +1,33 @@
+main {
+  margin-left: 5rem;
+  padding: 1rem 2rem; 
+}
+
+.history-table {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  width: 100%;
+  padding: 20px 15px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  max-width: 550px;
+  margin-inline: auto;
+}
+
+.history-table > thead {
+  border-bottom: 1px dotted #104e5b;
+  padding-bottom: .5rem;
+}
+
+.history-table tr{
+  display: grid;
+  grid-template-columns: repeat(2,35% 15%);
+ }
+ 
+.mg-table {
+  margin-left: 1.5ch;
+}
+.mg-time {
+  margin-left: 4.5ch;
+}

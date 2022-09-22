@@ -2,8 +2,7 @@
     [navbarTabs] = "navbarTabs"
 ></app-navbar>
 <main>
-    <!-- cliente, mesa, total, tiempo de demora -->
-    <table>
+    <table class="history-table">
         <thead>
             <tr>
                 <th>Cliente</th>
@@ -15,8 +14,8 @@
         <tbody>
             <tr *ngFor="let order of orderItems">
                 <td>{{order.client}}</td>
-                <td>{{order.mesa}}</td>
-                <td>{{order.timeElapsed}}</td>
+                <td class="mg-table">{{order.mesa}}</td>
+                <td class="mg-time">{{order.timeElapsed}}</td>
                 <td>$ {{order.total}}</td>
             </tr>
         </tbody>
