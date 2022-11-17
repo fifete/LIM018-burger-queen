@@ -60,7 +60,7 @@ Los usuarios principales son el chef, el mesero y el administrador de la hamburg
  
 ## 2.2 Flujograma de los estados para el Pedido
 <div align = “center”>
-<img src="https://miro.com/app/live-embed/uXjVPTxLrjQ=/?moveToViewport=-3273,-545,4361,2287&embedId=876349619921"/>
+  <img src="https://github.com/camotito0/LIM018-burger-queen/blob/develop/burgerqueen/src/assets/images/burgerqueen-flowchart.jpg"/>
 </div>
 
 # 3. Realización del Diseño
